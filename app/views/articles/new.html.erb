@@ -5,9 +5,22 @@
 	<input type="text" name="article[title]">
 	内容
 	<textarea name="article[content]"></textarea>
-	<input type="submit" value="t投稿する">
+	場所
+	<textarea name="article[area]"></textarea>
 
-	area
+	<input type="submit" value="投稿する">
+
+	<div class="field">
+	<%= f.label :img %>
+	<%= f.file_field :img %>
+	</div>
+
+
 	doya
 	img
 <% end %>
+
+
+
+
+<h3><%= link_to "", new_article_path %></h3>

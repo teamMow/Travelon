@@ -27,6 +27,7 @@ class ArticlesController < ApplicationController
   def update
   	@article.title = params[:title]
   	@article.content = params[:content]
+  	@article.area = params[:area]
   	@article.save
   	redirect_to article_path(@article.id)
   end
@@ -42,7 +43,7 @@ class ArticlesController < ApplicationController
   	end
 
   	def article_params
-  		params.require(:article).permit(:title, :content)
+  		params.require(:article).permit(:title, :content, :area, :img)
   	end
 
 end
