@@ -2,5 +2,10 @@
 <p><%= @article.title %></p>
 <h2>内容</h2>
 <p><%= @article.content %></p>
+<h2>場所</h2>
+<p><%= @article.area %></p>
+
+<%= link_to "戻る", article_path %>
+
 <%= link_to "編集", edit_article_path(@article.id) %>
 <%= link_to "削除", destroy_article_path(@article.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>

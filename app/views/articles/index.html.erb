@@ -2,4 +2,7 @@
 <% @articles.each do |article| %>
 	<p>タイトル</p>
 	<span><%= link_to article.title, article_path(article.id) %></span>
+
 <% end %>
+
+<h3><%= link_to "新規作成", new_article_path %></h3>
