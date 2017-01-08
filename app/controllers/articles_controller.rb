@@ -1,0 +1,22 @@
+class ArticlesController < ApplicationController
+
+  def new
+  end
+
+  def create
+  	@article =Article.new
+  	@article.title = params[:title]
+  	@article.content =params[:content]
+  	@article.save
+  	redirect_to article_path(@article.id)
+  end
+
+  def index
+  	@articles = Article.all
+  end
+
+  def show
+  	@article = Article.find(params[:id])
+  end  	
+
+end

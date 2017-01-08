@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'articles/new'
+  post '/articles' => 'articles#create'
+  get '/articles' => 'articles#index'
+  get '/articles/:id' => 'articles#show', as: 'article'
+
+
   # get 'home/top'
   root 'home#top'
 
