@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
 	before_action :set_article, only:[:show, :edit, :update, :destroy]
 
   def new
+  	@article =  Article.new
   end
 
   def create
@@ -11,7 +12,8 @@ class ArticlesController < ApplicationController
   	# @article.title = params[:title]
   	# @article.content =params[:content]
   	@article.save
-  	redirect_to article_path(@article.id)
+  	redirect_to @article
+  	# redirect_to article_path(@article.id)
   end
 
   def index
@@ -25,11 +27,13 @@ class ArticlesController < ApplicationController
   end
 
   def update
-  	@article.title = params[:title]
-  	@article.content = params[:content]
-  	@article.area = params[:area]
-  	@article.save
-  	redirect_to article_path(@article.id)
+  	@article.update(article_params)
+  	# @article.title = params[:title]
+  	# @article.content = params[:content]
+  	# @article.area = params[:area]
+  	# @article.save
+  	redirect_to @article
+  	# redirect_to article_path(@article.id)
   end
 
   def destroy
