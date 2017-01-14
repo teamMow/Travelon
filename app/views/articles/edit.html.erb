@@ -2,5 +2,7 @@
 <%= form_tag update_article_path(@article), method: 'patch' do %>
 	<%= text_field_tag :title, @article.title %>
 	<%= text_area_tag :content, @article.content %>
+	<%= text_area_tag :area, @article.area %>
+
 	<%= submit_tag '保存' %>
 <% end %>
