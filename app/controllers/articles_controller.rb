@@ -36,6 +36,9 @@ class ArticlesController < ApplicationController
   	redirect_to @article
   	# redirect_to article_path(@article.id)
   end
+  #＊編集できていない
+
+
 
   def destroy
   	@article.destroy
@@ -48,7 +51,7 @@ class ArticlesController < ApplicationController
   	end
 
   	def article_params
-  		params.require(:article).permit(:title, :content, :area, :img)
+  		params.require(:article).permit(:title, :content, :area, :user_id)
   	end
 
 end
