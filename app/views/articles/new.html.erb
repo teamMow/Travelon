@@ -1,43 +1,17 @@
 <h1>新しく投稿しよう！！</h1>
 
-<% if @note.errors.any? %>
+<% if @article.errors.any? %>
     <div id="error_explanation" class="alert alert-danger">
-      <h2><%= @note.errors.count %>件のエラーがあります。</h2>
+      <h2><%= @article.errors.count %>件のエラーがあります。</h2>
 
       <ul>
-        <% @note.errors.full_messages.each do |message| %>
+        <% @article.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
-   タイトル
-  <%= text_field_tag 'note[title]', @note.title, class: "form-control title-field" %>
-  内容
-  <%= text_area_tag 'note[content]', @note.content, class: "form-control content-field" %>
-
 
 <%= render'form' %>
 <h3><%= link_to "TOP", root_path %></h3>
 
-
-<!-- <h1>新規投稿する</h1>
-<%= form_for @note do |f| %>
-  <% if @note.errors.any? %>
-    <div id="error_explanation" class="alert alert-danger">
-      <h2><%= @note.errors.count %>件のエラーがあります。</h2>
-
-      <ul>
-        <% @note.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-    タイトル
-  <%= f.text_field :title, class: "form-control title-field" %>
-  内容
-  <%= f.text_area :content, class: "form-control content-field" %>
-  <%= f.submit '保存', class: "btn primary-btn" %>
-<% end %>

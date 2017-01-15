@@ -4,8 +4,8 @@
 	<%= f.text_field :title, class: "" %>
 	内容
 	<%= f.text_area :content, class: "" %>
-	場所
-	<%= f.text_area :area, class: "" %>
+	画像
+	<%= f.file_field :img, class: "" %>
 
 	<%= f.submit "投稿する", class: "" %>
 <% end %>

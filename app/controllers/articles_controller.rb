@@ -4,8 +4,6 @@ class ArticlesController < ApplicationController
 
   def new
   	@article =  Article.new
-  　　# @article = Article.new(title: params[:title], content: params[:content])
-
   end
 
   def create
@@ -14,6 +12,7 @@ class ArticlesController < ApplicationController
   	# @article = Article.new
   	# @article.title = params[:title]
   	# @article.content =params[:content]
+  	@article.user_id = current_user.id
 
   	if @article.save
   		redirect_to @article, notice: '投稿が成功しました'
@@ -45,7 +44,6 @@ class ArticlesController < ApplicationController
     	render :edit
     end
   end
-  #＊編集できていない??
 
 
 
@@ -60,6 +58,6 @@ class ArticlesController < ApplicationController
   	end
 
   	def article_params
-  		params.require(:article).permit(:title, :content, :area, :user_id)
+  		params.require(:article).permit(:title, :content, :area,:img, :user_id)
   	end
 end
