@@ -1,8 +1,13 @@
 <h1>Article一覧</h1>
+
+
 <% @articles.each do |article| %>
 	<p>タイトル</p>
-	<span><%= link_to article.title, article_path(article.id) %></span>
-
+	<h2><%= link_to article.title, article_path(article.id) %></h2>
+	<p>内容</p>
+	<h2><%= article.content %></h2>
+	<p>画像</p>
+	<h2><%= image_tag article.img %></h2>
 <% end %>
 
 <h3><%= link_to "新規作成", new_article_path %></h3>
