@@ -1,11 +1,13 @@
 
 <%= form_for @article do |f| %>
 	タイトル
-	<%= f.text_field :title, class: "" %>
+	<%= f.text_field :title, class: "article, article-title" %>
 	内容
-	<%= f.text_area :content, class: "" %>
+	<%= f.text_area :content, class: "article, article-content" %>
+	場所
+	<%= f.text_area :area, class: "article, article-area" %>
 	画像
 	<%= f.file_field :img, class: "" %>
 
-	<%= f.submit "投稿する", class: "" %>
+	<%= f.submit "投稿する", class: "article, article-submit" %>
 <% end %>

@@ -9,11 +9,12 @@
 <p><%= @article.title %></p>
 <h2>内容</h2>
 <p><%= @article.content %></p>
+<h2>場所</h2>
+<p><%= @article.area %></p>
+
 <h2>画像</h2>
 <p><%= image_tag@article.img %></p>
-
-<!-- <p><%= @article.area %></p>
- -->
+ 
 
 
 <%= link_to "戻る", articles_path %>
