@@ -1,8 +1,13 @@
 <h1>投稿の編集</h1>
-<%= form_tag update_article_path(@article), method: 'patch' do %>
-	<%= text_field_tag :title, @article.title %>
-	<%= text_area_tag :content, @article.content %>
-	<%= text_area_tag :area, @article.area %>
 
-	<%= submit_tag '保存' %>
+
+<%= form_for @article do |f| %>
+	タイトル
+	<%= f.text_field :title, class: "" %>
+	内容
+	<%= f.text_field :content, class: "" %>
+	場所
+	<%= f.text_field :area, class: "" %>
+
+	<%= f.submit "保存", class: "" %>
 <% end %>
