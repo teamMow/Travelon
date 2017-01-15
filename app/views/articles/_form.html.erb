@@ -1,32 +1,11 @@
-<%= form_for(article) do |f| %>
 
-	<div class="field">
-		<%= f.label :title %>
-		<%= f.text_field :title %>
-	</div>
+<%= form_for @article do |f| %>
+	タイトル
+	<%= f.text_field :title, class: "" %>
+	内容
+	<%= f.text_area :content, class: "" %>
+	場所
+	<%= f.text_area :area, class: "" %>
 
-	<div class="field">
-		<%= f.label :content %>
-		<%= f.text_area :content %>
-	</div>
-
-	<div class="field">
-		<%= f.label :area %>
-		<%= f.text_area :area %>
-	</div>
-
-	<div class="field">
-		<%= f.label :user_id %><br>
-		ユーザーID
-		<%= f.collection_select :user_id, User.all, :id, :id %>
-	</div>
-
-
-
-
-<!-- <div class="field">
-	<%= f.label :image %>
-	<%= f.file_field :image %>
-</div> -->
-
+	<%= f.submit "投稿する", class: "" %>
 <% end %>

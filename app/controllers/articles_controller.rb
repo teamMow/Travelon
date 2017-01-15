@@ -4,6 +4,8 @@ class ArticlesController < ApplicationController
 
   def new
   	@article =  Article.new
+  　　# @article = Article.new(title: params[:title], content: params[:content])
+
   end
 
   def create
@@ -12,9 +14,13 @@ class ArticlesController < ApplicationController
   	# @article = Article.new
   	# @article.title = params[:title]
   	# @article.content =params[:content]
-  	@article.save
-  	redirect_to @article
-  	# redirect_to article_path(@article.id)
+
+  	if @article.save
+  		redirect_to @article, notice: '投稿が成功しました'
+  		# redirect_to article_path(@article.id)
+    else
+    	render :new
+    end
   end
 
   def index
@@ -32,11 +38,14 @@ class ArticlesController < ApplicationController
   	# @article.title = params[:title]
   	# @article.content = params[:content]
   	# @article.area = params[:area]
-  	# @article.save
-  	redirect_to @article
-  	# redirect_to article_path(@article.id)
+  	if @article.save
+  		redirect_to @article, notice: '投稿が更新されました'
+  		# redirect_to article_path(@article.id)
+    else
+    	render :edit
+    end
   end
-  #＊編集できていない
+  #＊編集できていない??
 
 
 
@@ -53,5 +62,4 @@ class ArticlesController < ApplicationController
   	def article_params
   		params.require(:article).permit(:title, :content, :area, :user_id)
   	end
-
 end

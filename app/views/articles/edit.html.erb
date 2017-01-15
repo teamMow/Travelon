@@ -1,15 +1,4 @@
 <h1>投稿の編集</h1>
 
+<%= render'form' %>
 
-<%= form_for @article do |f| %>
-	タイトル
-	<%= f.text_field :title, class: "" %>
-	内容
-	<%= f.text_area :content, class: "" %>
-	場所
-	<%= f.text_area :area, class: "" %>
-
-	<%= f.submit "保存", class: "" %>
-<% end %>
-
-<!-- text_fieldをできれば範囲を広げられるやつに修正する -->
