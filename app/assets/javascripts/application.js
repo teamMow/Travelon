@@ -14,3 +14,33 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$('.star1').click(function(){
+	$('.star1').css('color','yellow');
+});
+
+$('.star2').click(function(){
+	$('.star1').css('color','yellow');
+	$('.star2').css('color','yellow');
+});
+
+$('.star3').click(function(){
+	$('.star1').css('color','yellow');
+	$('.star2').css('color','yellow');
+	$('.star3').css('color','yellow');
+});
+
+$('.star4').click(function(){
+	$('.star1').css('color','yellow');
+	$('.star2').css('color','yellow');
+	$('.star3').css('color','yellow');
+	$('.star4').css('color','yellow');
+});
+
+$('.star5').click(function(){
+	$('.star1').css('color','yellow');
+	$('.star2').css('color','yellow');
+	$('.star3').css('color','yellow');
+	$('.star4').css('color','yellow');
+	$('.star5').css('color','yellow');
+});
