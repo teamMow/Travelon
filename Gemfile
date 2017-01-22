@@ -37,6 +37,11 @@ gem 'jbuilder', '~> 2.5'
 
 
 
+gem 'pry'
+gem 'better_errors'
+gem 'binding_of_caller'
+
+
 # ユーザーログイン
 gem 'devise'
 

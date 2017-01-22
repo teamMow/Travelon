@@ -20,7 +20,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
 
   # 画像の上限を100px×100pxにする
-  process :resize_to_limit => [100, 100]
+  process :resize_to_limit => [300, 300]
 
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

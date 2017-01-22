@@ -1,7 +1,36 @@
+<div class="container">
+<%= form_for @article do |f| %>
+	<br>
+	タイトル
+	<%= f.text_field :title, class: "article, article-title" %>
+	<br>
+	内容
+	<%= f.text_area :content, class: "article, article-content" %>
+	<br>
+	場所
+	<%= f.text_area :area, class: "article, article-area" %>
+	<br>
+	画像
+	<%= f.file_field :img, class: "article" %>
 
-<div class="field">
-	<%= f.label :image %>
-	<%= f.file_field :image %>
+
+	<br>
+	DOYA
+	<%= f.number_field :doya, class: "article" %>
+
+
+	<!-- <div id="container">
+    <h1>Star Valuation</h1>
+    <div class="star-value" name="ex1"></div>
+    </div>
+
+	<div class='star'>
+	<p class="star1">★</p><p class="star2">★</p><p class="star3">★</p><p class="star4">★</p><p class="star5">★</p>
+	</div> -->
+
+	<br>
+	<%= f.submit "投稿する", class: "article, article-submit" %>
+<% end %>
 </div>
 
 <div class="field">

@@ -1,8 +1,43 @@
 <h1>Article一覧</h1>
+
+<div class="index-content clearfix">
 <% @articles.each do |article| %>
-	<p>タイトル</p>
-	<span><%= link_to article.title, article_path(article.id) %></span>
+	<!-- <p>タイトル</p> -->
+	<h2 class="article-title"><%= link_to article.title, article_path(article.id) %></h2>
+	<br>
+
+	<!-- <p>内容</p> -->
+	<h3 class="article-content"><%= article.content %></h3>
+	<br>
+
+	<!-- <p>場所</p> -->
+	<h3 class="article-area"><%= article.area %></h3>
+	<br>
+
+
+	<!-- どや -->
+	<h3 class="article-doya"><%= article.doya %>
+		<% if article.doya == 1 %>
+			<div class="star" ><%= image_tag ('star-image.jpg') %></div>
+		<% elsif article.doya == 2 %>
+			<div class="star" ><%= image_tag ('star-image.jpg') %></div>
+			<div class="star" ><%= image_tag ('star-image.jpg') %></div>
+		<% elsif article.doya == 3 %>
+			<div class="star" ><%= image_tag ('star-image.jpg') %></div>
+			<div class="star" ><%= image_tag ('star-image.jpg') %></div>
+			<div class="star" ><%= image_tag ('star-image.jpg') %></div>
+		<% else article.doya %>
+			<p>NOどや</p>
+		<% end %>
+	</h3>
+	<br>
+
+	<!-- <p>画像</p> -->
+	<h3 class="article-image"><%= image_tag article.img %></h3>
+	<br>
 
 <% end %>
+</div>
 
 <h3><%= link_to "新規作成", new_article_path %></h3>
+<h3><%= link_to "TOP", root_path %></h3>
