@@ -41,12 +41,19 @@ GEM
     arel (7.1.4)
     bcrypt (3.1.11)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+
+>>>>>>> a59107f7628875f5d8756c65faa5a4f6899ccc82
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
+<<<<<<< HEAD
 >>>>>>> faa1419087074d5bdef07b05ffab36a6634b8703
+=======
+>>>>>>> a59107f7628875f5d8756c65faa5a4f6899ccc82
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
@@ -112,6 +119,10 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> a59107f7628875f5d8756c65faa5a4f6899ccc82
     pry-byebug (3.4.2)
       byebug (~> 9.0)
       pry (~> 0.10)
@@ -123,8 +134,12 @@ GEM
     pry-stack_explorer (0.4.9.2)
       binding_of_caller (>= 0.7)
       pry (>= 0.9.11)
+<<<<<<< HEAD
 =======
 >>>>>>> faa1419087074d5bdef07b05ffab36a6634b8703
+=======
+
+>>>>>>> a59107f7628875f5d8756c65faa5a4f6899ccc82
     puma (3.6.2)
     rack (2.0.1)
     rack-test (0.6.3)
@@ -220,13 +235,20 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> a59107f7628875f5d8756c65faa5a4f6899ccc82
   pry-byebug
   pry-doc
   pry-rails
   pry-stack_explorer
-=======
+
   pry
+<<<<<<< HEAD
 >>>>>>> faa1419087074d5bdef07b05ffab36a6634b8703
+=======
+>>>>>>> a59107f7628875f5d8756c65faa5a4f6899ccc82
   puma (~> 3.0)
   rails (~> 5.0.1)
   rmagick
