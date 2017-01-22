@@ -5,9 +5,11 @@
 <h2>場所</h2>
 <p><%= @article.area %></p>
 
-<%= link_to "戻る", article_path %>
+<%= link_to "戻る", articles_path %>
 
-<%= link_to "編集", edit_article_path(@article.id) %>
-<%= link_to "削除", destroy_article_path(@article.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+<% if current_user.id == @article.user_id %>
+	<%= link_to "編集", edit_article_path(@article.id) %>
+	<%= link_to "削除", destroy_article_path(@article.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+<% end %>
 
 <%= link_to "一覧ページ", articles_path %>
