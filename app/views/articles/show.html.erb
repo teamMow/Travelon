@@ -1,22 +1,43 @@
-<h1>投稿の詳細</h1>
+<h1>旅の記録</h1>
 
 <p id="notice" class="alert alert-success">
   <%= notice %>
 </p>
 
+<div class="article-container">
+	<h3>タイトル</h3>
+	<p class="article-title"><%= @article.title %></p>
+	<br>
 
-<h2>タイトル</h2>
-<p><%= @article.title %></p>
-<h2>内容</h2>
-<p><%= @article.content %></p>
-<h2>場所</h2>
-<p><%= @article.area %></p>
-<h2>どや</h2>
-<p><%= @article.doya %></p>
+	<h3>内容</h3>
+	<div class="article-content"><%= @article.content %></div>
+	<br>
+
+	<h3>場所</h3>
+	<p class="article-area"><%= @article.area %></p>
+	<br>
+
+	<h3>どや</h3>
+	<p class="article-doya clearfix"><%= @article.doya %></p>
+			<% if @article.doya == 1 %>
+				<div class="star" ><%= image_tag ('star-image.jpg') %></div>
+			<% elsif @article.doya == 2 %>
+				<div class="star" ><%= image_tag ('star-image.jpg') %></div>
+				<div class="star" ><%= image_tag ('star-image.jpg') %></div>
+			<% elsif @article.doya == 3 %>
+				<div class="star" ><%= image_tag ('star-image.jpg') %></div>
+				<div class="star" ><%= image_tag ('star-image.jpg') %></div>
+				<div class="star" ><%= image_tag ('star-image.jpg') %></div>
+			<% else @article.doya %>
+				<p>NOドヤ</p>
+			<% end %>
+	<br>
 
 
-<h2>画像</h2>
-<p><%= image_tag@article.img %></p>
+	<h2>Photo</h2>
+	<div class="article-image"><%= image_tag@article.img %></div>
+</div>
+
  
 
 
