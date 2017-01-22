@@ -1,5 +1,16 @@
 <h1>旅の記録</h1>
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a59107f7628875f5d8756c65faa5a4f6899ccc82
+<%= link_to "戻る", articles_path %>
+
+<% if current_user.id == @article.user_id %>
+	<%= link_to "編集", edit_article_path(@article.id) %>
+	<%= link_to "削除", destroy_article_path(@article.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+<% end %>
+
 <p id="notice" class="alert alert-success">
   <%= notice %>
 </p>
@@ -41,7 +52,12 @@
  
 
 
+<<<<<<< HEAD
 <%= link_to "戻る", articles_path %>
 <%= link_to "編集", edit_article_path(@article.id) %>
 <%= link_to "削除", destroy_article_path(@article.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+>>>>>>> faa1419087074d5bdef07b05ffab36a6634b8703
+=======
+
+>>>>>>> a59107f7628875f5d8756c65faa5a4f6899ccc82
 <%= link_to "一覧ページ", articles_path %>

@@ -9,16 +9,38 @@
   </head>
  
   <body>
+<<<<<<< HEAD
+<<<<<<< HEAD
+  
+     <% if user_signed_in? %>
+=======
   	<h1>welcome to travelon!</h1>
 
     <% if user_signed_in? %>
+>>>>>>> faa1419087074d5bdef07b05ffab36a6634b8703
+=======
+
+
+  	<h1>welcome to travelon!</h1>
+
+    <% if user_signed_in? %>
+
+>>>>>>> a59107f7628875f5d8756c65faa5a4f6899ccc82
       Logged in as <%= current_user.email %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
     <% else %>
       <%= link_to "新規登録", new_user_registration_path %> |
       <%= link_to "ログイン", new_user_session_path %>
     <% end %>
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+=======
     
+>>>>>>> faa1419087074d5bdef07b05ffab36a6634b8703
+=======
+
+>>>>>>> a59107f7628875f5d8756c65faa5a4f6899ccc82
     <%= yield %>
   </body>
 </html>
