@@ -58,12 +58,9 @@ class ArticlesController < ApplicationController
   	end
 
   	def article_params
-<<<<<<< HEAD
-<<<<<<< HEAD
-  		params.require(:article).permit(:title, :content, :area, :img, :user_id)
-=======
+
   		params.require(:article).permit(:title, :content, :area, :img, :user_id, :doya)
->>>>>>> a59107f7628875f5d8756c65faa5a4f6899ccc82
+
   	end
 
     def correct_user
@@ -75,11 +72,4 @@ class ArticlesController < ApplicationController
 
 
 end
-<<<<<<< HEAD
-=======
-  		params.require(:article).permit(:title, :content, :area, :img, :doya, :user_id)
-  	end
-end
->>>>>>> faa1419087074d5bdef07b05ffab36a6634b8703
-=======
->>>>>>> a59107f7628875f5d8756c65faa5a4f6899ccc82
+
