@@ -1,3 +1,165 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/*共通*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.clearfix::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+h1{
+	text-align: center;
+}
+
+h2{
+	text-align: center;
+}
+
+h3{
+	text-align: center;
+}
+
+
+/*新規作成_form*/
+.new_article{
+	width: 700px;
+	height: 500px;
+	margin:0 auto;
+	display: block;
+	line-height: 30px;
+	text-align: center;
+	background-image: url("http://pds.exblog.jp/pds/1/201104/07/39/e0207439_20191388.jpg");
+	background-size: cover;
+}
+
+.article{
+	opacity: .7;
+}
+
+/*.star{
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	text-align: center;
+	color: yellow;
+	size: 30px;
+}
+
+.star p{
+	display: inline;
+}*/
+
+/*一覧ページindex/詳細ページshow*/
+.article-container{
+	width: 500px;
+	height: 700px;
+	margin: 0 auto;
+	background-color: #afeeee;
+}
+
+.article-title{
+	width: 400px;
+	height: auto;
+	background-color: white;
+	margin: 0 auto;
+}
+
+.article-content{
+	width: 400px;
+	height: auto;
+	background-color: white;
+	margin: 0 auto;
+}
+
+.article-area{
+	width: 400px;
+	height: auto;
+	background-color: white;
+	margin: 0 auto;
+}
+
+.article-image{
+	text-align: center;
+}
+
+
+/*
+.article-doya{
+	width: 200px;
+	height: auto;
+	margin: 0 auto;
+	position: relative;
+}*/
+
+/*.star{
+   margin: 50px 0;
+   position: relative;
+   display: block;
+   color: #ffff00;
+   width: 0px;
+   height: 0px;
+   border-right:  100px solid transparent;
+   border-bottom: 70px  solid #ffff00;
+   border-left:   100px solid transparent;
+   -moz-transform:    rotate(35deg);
+   -webkit-transform: rotate(35deg);
+   -ms-transform:     rotate(35deg);
+   -o-transform:      rotate(35deg);
+}
+
+.star:before{
+   border-bottom: 80px solid #ffff00;
+   border-left: 30px solid transparent;
+   border-right: 30px solid transparent;
+   position: absolute;
+   height: 0;
+   width: 0;
+   top: -45px;
+   left: -65px;
+   display: block;
+   content: '';
+   -webkit-transform: rotate(-35deg);
+   -moz-transform:    rotate(-35deg);
+   -ms-transform:     rotate(-35deg);
+   -o-transform:      rotate(-35deg);
+}
+
+.star:after{
+   position: absolute;
+   display: block;
+   color: #ffff00;
+   top: 3px;
+   left: -105px;
+   width: 0px;
+   height: 0px;
+   border-right: 100px solid transparent;
+   border-bottom: 70px solid ;
+   border-left: 100px solid transparent;
+   -webkit-transform: rotate(-70deg);
+   -moz-transform:    rotate(-70deg);
+   -ms-transform:     rotate(-70deg);
+   -o-transform:      rotate(-70deg);
+   content: '';
+}*/
+
+
+
+
+/*どや*/
+.star{
+    margin: auto;
+    /*background: url(./star-valuation.png) no-repeat;*/
+}
+
+.star>div {
+    float: left;
+}
+

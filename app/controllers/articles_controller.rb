@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+	before_action :authenticate_user!
 	before_action :set_article, only:[:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   before_action :correct_user, only: [:edit, :update]
@@ -13,9 +14,14 @@ class ArticlesController < ApplicationController
   	# @article = Article.new
   	# @article.title = params[:title]
   	# @article.content =params[:content]
-  	@article.save
-  	redirect_to @article
-  	# redirect_to article_path(@article.id)
+  	@article.user_id = current_user.id
+
+  	if @article.save
+  		redirect_to @article, notice: '投稿が成功しました'
+  		# redirect_to article_path(@article.id)
+    else
+    	render :new
+    end
   end
 
   def index
@@ -33,9 +39,12 @@ class ArticlesController < ApplicationController
   	# @article.title = params[:title]
   	# @article.content = params[:content]
   	# @article.area = params[:area]
-  	# @article.save
-  	redirect_to @article
-  	# redirect_to article_path(@article.id)
+  	if @article.save
+  		redirect_to @article, notice: '投稿が更新されました'
+  		# redirect_to article_path(@article.id)
+    else
+    	render :edit
+    end
   end
 
   def destroy
@@ -49,7 +58,7 @@ class ArticlesController < ApplicationController
   	end
 
   	def article_params
-  		params.require(:article).permit(:title, :content, :area, :img, :user_id)
+  		params.require(:article).permit(:title, :content, :area, :img, :user_id, :doya)
   	end
 
     def correct_user
