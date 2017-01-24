@@ -22,8 +22,8 @@
 	<p class="article-area"><%= @article.area %></p>
 	<br>
 
-	<h3>どや</h3>
-	<p class="article-doya clearfix"><%= @article.doya %></p>
+	<h3>どや度</h3>
+	<p class="article-doya clearfix"><%= @article.doya %>点</p>
 			<% if @article.doya == 1 %>
 				<div class="star" ><%= image_tag ('star-image.jpg') %></div>
 			<% elsif @article.doya == 2 %>
