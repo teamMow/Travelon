@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :set_user,only: [:edit, :update, :destroy, :show]
+	before_action :set_user, only: [:edit, :update, :destroy, :show, :likes]
 
 	def edit
 	end
@@ -25,13 +25,13 @@ class UsersController < ApplicationController
 	def show
 	end
 
+	def likes
+		# @user = User.find(params[:id])
+	end
 
 	private
 		def set_user
 			@user = User.find(params[:id])
 		end
-
-
-
 
 end
