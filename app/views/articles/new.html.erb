@@ -1,0 +1,18 @@
+<h1>新しく投稿しよう！！</h1>
+
+<% if @article.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h2><%= @article.errors.count %>件のエラーがあります。</h2>
+
+      <ul>
+        <% @article.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+
+<%= render'form' %>
+<h3><%= link_to "TOP", root_path %></h3>
+

@@ -1,0 +1,15 @@
+<h1>プロフィールの編集</h1>
+
+
+<%= form_for @user do |f| %>
+	名前
+	<%= f.text_field :name, class: "" %>
+	出身地
+	<%= f.text_field :birthplace, class: "" %>
+	性別
+	<%= f.text_field :sex, class: "" %>
+	年齢
+	<%= f.text_field :age, class: "" %>
+
+	<%= f.submit "保存", class: "" %>
+<% end %>
