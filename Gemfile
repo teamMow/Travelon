@@ -49,6 +49,7 @@ gem 'devise'
 gem 'rmagick'
 gem 'carrierwave'
 
+gem 'kaminari'
 
 
 group :development, :test do

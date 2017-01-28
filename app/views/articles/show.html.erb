@@ -1,9 +1,11 @@
 <h1>旅の記録</h1>
 
+
 <% if current_user.id == @article.user_id %>
 	<%= link_to "編集", edit_article_path(@article.id) %>
 	<%= link_to "削除", destroy_article_path(@article.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
 <% end %>
+
 
 <p id="notice" class="alert alert-success">
   <%= notice %>
@@ -22,9 +24,10 @@
 	<p class="article-area"><%= @article.area %></p>
 	<br>
 
-	<div class="doya clearfix">
+
 	<h3>どや度</h3>
-	<p class="article-doya"><%= @article.doya %>どや</p>
+	<div class="article-doya">
+	<p><%= @article.doya %>どや</p>
 			<% if @article.doya == 1 %>
 				<div class="star" ><p>★</p></div>
 				<div class="star" ><p>☆</p></div>
@@ -61,8 +64,12 @@
 	</div>
 	<br>
 
-	<h2>Photo</h2>
+	<h3>Photo</h3>
 	<div class="article-image"><%= image_tag@article.img %></div>
+	<br>
+
+	<h3>Hobby</h3>
+	<div class="article-hobby"><%= @article.hobby %></div>
 	<br>
 
 	<tr>
@@ -76,5 +83,14 @@
     </tr>
 </div>
 
+
+<% if current_user.id == @article.user_id %>
+	<%= link_to "編集", edit_article_path(@article.id) %>
+	<%= link_to "削除", destroy_article_path(@article.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+<% end %>
+
  
+
+
+
 <%= link_to "一覧ページ", articles_path %>

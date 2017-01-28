@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
-  	@articles = Article.all
+  	@articles = Article.page(params[:page]).per(5)
   end
 
   def show
@@ -60,7 +60,9 @@ class ArticlesController < ApplicationController
   	end
 
   	def article_params
-  		params.require(:article).permit(:title, :content, :area, :img, :user_id, :doya)
+
+  		params.require(:article).permit(:title, :content, :area, :img, :user_id, :doya, :hobby)
+
   	end
 
     def correct_user
@@ -72,3 +74,4 @@ class ArticlesController < ApplicationController
 
 
 end
+

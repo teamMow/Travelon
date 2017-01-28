@@ -59,6 +59,9 @@
 	<h3 class="article-image"><%= image_tag article.img %></h3>
 	<br>
 
+	<h3 class="article-hobby"><%= article.hobby %></h3>
+	<br>
+
 	<tr>
        <td>
             <% if article.liked_by? current_user %>
@@ -74,5 +77,8 @@
 </tbody>
 </div>
 
+<%= paginate @articles %>
+
 <h3><%= link_to "新規作成", new_article_path %></h3>
 <h3><%= link_to "ユーザー一覧",users_path %></h3>
+
