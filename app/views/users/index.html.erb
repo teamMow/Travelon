@@ -2,7 +2,12 @@
 <% @users.each do |user| %>
 	<p>名前</p>
 	<span><%= link_to user.name, user_path(user.id) %></span>
+
+
+
 <% end %>
 
+<%= paginate @users %>
+<h3><%= link_to "記事一覧", articles_path %></h3>
+<h3><%= link_to "投稿一覧", root_path %></h3>
 
-<h2><%= link_to "投稿一覧", root_path %></h2>

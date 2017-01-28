@@ -23,9 +23,13 @@
 	ユーザーID
 	<%= f.collection_select :user_id, User.all, :id, :id %>
 
+	
+
 	<br>
 	<%= f.submit "投稿する", class: "article, article-submit" %>
 
-<% end %>
+
 </div>
+
+<% end %>
 

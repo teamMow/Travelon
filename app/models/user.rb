@@ -5,7 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :articles, dependent: :destroy
 
+
   has_many :likes, dependent: :destroy
   # ユーザーが削除されたら、いいねも削除される
+
 
 end
