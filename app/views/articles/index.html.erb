@@ -17,20 +17,42 @@
 
 
 	<!-- どや -->
-	<h3 class="article-doya"><%= article.doya %>
+	<div class="article-doya">
+	<h3><%= article.doya %>どや</h3>
 		<% if article.doya == 1 %>
-			<div class="star" ><%= image_tag ('star-image.jpg') %></div>
+			<div class="star" ><p>★</p></div>
+			<div class="star" ><p>☆</p></div>
+			<div class="star" ><p>☆</p></div>
+			<div class="star" ><p>☆</p></div>
+			<div class="star" ><p>☆</p></div>
 		<% elsif article.doya == 2 %>
-			<div class="star" ><%= image_tag ('star-image.jpg') %></div>
-			<div class="star" ><%= image_tag ('star-image.jpg') %></div>
+			<div class="star" ><p>★</p></div>
+			<div class="star" ><p>★</p></div>
+			<div class="star" ><p>☆</p></div>
+			<div class="star" ><p>☆</p></div>
+			<div class="star" ><p>☆</p></div>
 		<% elsif article.doya == 3 %>
-			<div class="star" ><%= image_tag ('star-image.jpg') %></div>
-			<div class="star" ><%= image_tag ('star-image.jpg') %></div>
-			<div class="star" ><%= image_tag ('star-image.jpg') %></div>
+			<div class="star" ><p>★</p></div>
+			<div class="star" ><p>★</p></div>
+			<div class="star" ><p>★</p></div>
+			<div class="star" ><p>☆</p></div>
+			<div class="star" ><p>☆</p></div>
+		<% elsif article.doya == 4 %>
+			<div class="star" ><p>★</p></div>
+			<div class="star" ><p>★</p></div>
+			<div class="star" ><p>★</p></div>
+			<div class="star" ><p>★</p></div>
+			<div class="star" ><p>☆</p></div>
+		<% elsif article.doya == 5 %>
+			<div class="star" ><p>★</p></div>
+			<div class="star" ><p>★</p></div>
+			<div class="star" ><p>★</p></div>
+			<div class="star" ><p>★</p></div>
+			<div class="star" ><p>★</p></div>
 		<% else article.doya %>
 			<p>NOどや</p>
 		<% end %>
-	</h3>
+	</div>
 	<br>
 
 	<!-- <p>画像</p> -->
@@ -38,15 +60,6 @@
 	<br>
 
 	<tr>
-      <% if article.img? %>
-        <td><%=  image_tag article.img.url%></td>
-      <% else %>
-        <td><%= image_tag 'noimage.gif' %></td>
-      <% end %>
-      <td><%= link_to article.title, article_path(article)%></td>
-      <td><%= article.content %></td>
-      
-
        <td>
             <% if article.liked_by? current_user %>
               <%= link_to "いいね解除", article_likes_path(article), method: :delete %>

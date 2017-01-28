@@ -91,13 +91,13 @@ h3{
 }
 
 
-/*
+
 .article-doya{
-	width: 200px;
+	width: 100px;
 	height: auto;
 	margin: 0 auto;
 	position: relative;
-}*/
+}
 
 /*.star{
    margin: 50px 0;
@@ -155,7 +155,10 @@ h3{
 
 /*どや*/
 .star{
+    color: red;
     margin: auto;
+    display: block;
+    float: left;
     /*background: url(./star-valuation.png) no-repeat;*/
 }
 
