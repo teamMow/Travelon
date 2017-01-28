@@ -2,6 +2,9 @@
 <% @users.each do |user| %>
 	<p>名前</p>
 	<span><%= link_to user.name, user_path(user.id) %></span>
+
+
 <% end %>
-
-
+<div>
+<%= link_to "記事一覧", articles_path %>
+</div>
