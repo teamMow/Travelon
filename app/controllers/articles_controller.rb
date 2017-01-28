@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
-	before_action :authenticate_user!
-	before_action :set_article, only:[:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :set_article, only:[:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   before_action :correct_user, only: [:edit, :update]
 
@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
-  	@articles = Article.all
+  	@articles = Article.page(params[:page]).per(5)
   end
 
   def show
@@ -51,6 +51,8 @@ class ArticlesController < ApplicationController
   	@article.destroy
   	redirect_to articles_path
   end
+
+
 
   private
   	def set_article

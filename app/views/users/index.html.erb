@@ -4,7 +4,10 @@
 	<span><%= link_to user.name, user_path(user.id) %></span>
 
 
+
 <% end %>
-<div>
-<%= link_to "記事一覧", articles_path %>
-</div>
+
+<%= paginate @users %>
+<h3><%= link_to "記事一覧", articles_path %></h3>
+<h3><%= link_to "投稿一覧", root_path %></h3>
+

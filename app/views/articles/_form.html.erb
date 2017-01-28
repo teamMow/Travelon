@@ -16,7 +16,7 @@
 
 	<br>
 	DOYA
-	<%= f.number_field :doya, class: "article" %>
+	<%= f.collection_select :doya, Star.all, :id, :id %>
 
 	<br>
 	<%= f.label :user_id %><br>
