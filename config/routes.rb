@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 # homeコントローラ
+  get 'home/top' => 'home#top'
 # get 'home/top'
   root 'articles#index'
 
