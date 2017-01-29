@@ -31,7 +31,16 @@
 	</div>
 
 	<div class="form-group">
+	趣味
+	<%= f.collection_select :hobby, Hobby.all, :body, :body %>
+	</div>
+
+
+	<div class="form-group">
 	<%= f.submit "投稿する", class: "article, article-submit, btn btn-success" %>
+
+	
+
 	
 <% end %>
 

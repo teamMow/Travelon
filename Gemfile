@@ -46,8 +46,8 @@ gem 'binding_of_caller'
 gem 'devise'
 
 # 画像挿入
-gem 'carrierwave'
 gem 'rmagick'
+gem 'carrierwave'
 
 gem 'kaminari'
 
