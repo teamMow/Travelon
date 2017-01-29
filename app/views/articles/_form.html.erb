@@ -1,36 +1,42 @@
-<div class="container">
 <%= form_for @article do |f| %>
-	<br>
+	<div class="form-group">
 	タイトル
-	<%= f.text_field :title, class: "article, article-title" %>
-	<br>
+	<%= f.text_field :title, class: "article, article-title, form-control" %>
+	</div>
+	
+	<div class="form-group">
 	内容
-	<%= f.text_area :content, class: "article, article-content" %>
-	<br>
+	<%= f.text_area :content, class: "article, article-content, form-control" %>
+	</div>
+
+	<div class="form-group">
 	場所
-	<%= f.text_area :area, class: "article, article-area" %>
-	<br>
+	<%= f.text_area :area, class: "article, article-area, form-control" %>
+	</div>
+
+	<div class="form-group">
 	画像
 	<%= f.file_field :img, class: "article" %>
+	</div>
 
-	<br>
-	DOYA
+	<div class="form-group">
+	どや度
 	<%= f.collection_select :doya, Star.all, :id, :id %>
+	</div>
 
-	<br>
+	<div class="form-group">
 	<%= f.label :user_id %><br>
 	ユーザーID
 	<%= f.collection_select :user_id, User.all, :id, :id %>
+	</div>
 
-	<br>
+	<div class="form-group">
 	趣味
 	<%= f.collection_select :hobby, Hobby.all, :body, :body %>
+	</div>
 
-	<br>
-	<%= f.submit "投稿する", class: "article, article-submit" %>
-
-
-</div>
+	<div class="form-group">
+	<%= f.submit "投稿する", class: "article, article-submit, btn btn-success" %>
 
 <% end %>
 

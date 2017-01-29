@@ -10,6 +10,20 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require bootstrap.min
  *= require_tree .
  *= require_self
  */
+
+
+header.jumbotron {
+      background: url("header2.jpg");
+      background-position: center center;
+      background-size: cover;
+      color: #fff;
+    }
+    
+header .container {
+  margin-top: 20%;
+}
+
