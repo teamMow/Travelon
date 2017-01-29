@@ -9,6 +9,55 @@
   </head>
  
   <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-header">
+
+        <%= link_to "Travelon", home_top_path, class: "navbar-brand" %>
+
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-content">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <div id="nav-content" class="collapse navbar-collapse">
+            <!--リンクのリスト メニューリスト-->
+        <ul class="nav navbar-nav">
+          <li><% if user_signed_in? %>
+    
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          </li>
+              <% else %>
+                <li><%= link_to "新規登録", new_user_registration_path %></li> | 
+                <li><%= link_to "ログイン", new_user_session_path %></li>
+              <% end %>
+          <li><%= link_to "記事一覧", articles_path %></li>
+          
+        </ul>
+
+      </div>
+    </nav>
+
+    <header class="jumbotron">
+      <div class="container">
+        <h1>地球にときめく</h1>
+        <p>このサイトは旅好きの人々が隠れスポットを紹介しあい、<br>
+        新しい出会いや新しい発見を生み出すサイトです。</p>
+      </div>
+    </header>
+
+    <div class="container">
+    <div class="container">
+      <div class="row main">
+          <div class="col-md-2 col-xs-0 "></div>
+          <div class="col-md-8 col-xs-12 "><%= yield %></div>
+          <div class="col-md-2 col-xs-0 "></div>
+          
+      </div>
+    </div>
+
   <header>
     <nav>
         <!-- user_signed_in? はユーザがログインしているか調べるdeviseのHelperメソッド -->
@@ -28,17 +77,10 @@
           <%= link_to "ログイン", new_user_session_path %>
         <% end %>
     </nav>
-</header>
+  </header>
 
 
-
-
-
-
-  	<h1>welcome to travelon!</h1>
 
     
-
-    <%= yield %>
   </body>
 </html>
