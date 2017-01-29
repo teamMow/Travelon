@@ -40,11 +40,7 @@
     </div>  
 <% end %>
 
-
-
-<%= link_to "ユーザー一覧", users_path %>
 <%= link_to "編集", edit_user_path(@user.id) %>
 <%= link_to "削除", user_path(@user.id), method: :delete, "data-comfirum" => "本当に削除しますか？" %>
 
 
-<%= link_to "投稿一覧", root_path %>
