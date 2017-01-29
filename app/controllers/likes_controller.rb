@@ -8,6 +8,7 @@ class LikesController < ApplicationController
 
 		if @like.save
 			redirect_to articles_path, notice: "いいねしました"
+			logger.info "いいねしました"
 		else
 			redirect_to articles_path, alert: "いいねできません"
 		end

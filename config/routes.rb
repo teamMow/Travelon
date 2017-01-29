@@ -17,7 +17,7 @@ Rails.application.routes.draw do
    end
 
    resources :articles do
-    resources :likes, only: [:create, :destroy]
+    resource :likes, only: [:create, :destroy]
   end
 
   root 'articles#index'
