@@ -75,7 +75,7 @@
 	<tr>
        <td>
             <% if @article.liked_by? current_user %>
-              <%= link_to "いいね解除", article_like_path(@article), method: :delete %>
+              <%= link_to "いいね解除", article_likes_path(@article), method: :delete %>
             <% else %>
               <%= link_to "いいね", article_likes_path(@article), method: :post %>
             <% end %>
