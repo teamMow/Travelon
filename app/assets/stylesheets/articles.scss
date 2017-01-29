@@ -91,14 +91,26 @@ h3{
 }
 
 
-/*
+
 .article-doya{
-	width: 200px;
+	width: 100px;
 	height: auto;
 	margin: 0 auto;
 	position: relative;
-}*/
+}
 
+.article-hobby{
+  width: 100px;
+  height: auto;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.article-like{
+  width: 100px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
 /*.star{
    margin: 50px 0;
    position: relative;
@@ -155,7 +167,10 @@ h3{
 
 /*どや*/
 .star{
+    color: red;
     margin: auto;
+    display: block;
+    float: left;
     /*background: url(./star-valuation.png) no-repeat;*/
 }
 

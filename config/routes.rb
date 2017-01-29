@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
 
-# homeコントローラ
-# get 'home/top'
-  root 'articles#index'
-
-# Articleコントローラ
+  # Articleコントローラ
   get 'articles/new'
   # post '/articles' => 'articles#create'
   # get '/articles' => 'articles#index'
@@ -14,16 +10,18 @@ Rails.application.routes.draw do
   delete '/article/:id' => 'articles#destroy', as: 'destroy_article'
 
 
-  resources :articles do
-    resources :likes, only: [:create, :destroy]
-  end
-
-  # デバイス用のルーティングを自動生成
-  devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :users, only: [:edit, :update, :index, :destroy, :show] do
+    # デバイス用のルーティングを自動生成
+    devise_for :users
+    resources :users, only: [:edit, :update, :index, :destroy, :show] do
     get :likes, on: :member
+   end
+
+   resources :articles do
+    resource :likes, only: [:create, :destroy]
   end
 
+  root 'articles#index'
+  
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 end
