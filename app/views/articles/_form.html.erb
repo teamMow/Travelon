@@ -13,7 +13,6 @@
 	画像
 	<%= f.file_field :img, class: "article" %>
 
-
 	<br>
 	DOYA
 	<%= f.collection_select :doya, Star.all, :id, :id %>
@@ -26,8 +25,6 @@
 	<br>
 	趣味
 	<%= f.collection_select :hobby, Hobby.all, :body, :body %>
-
-	
 
 	<br>
 	<%= f.submit "投稿する", class: "article, article-submit" %>
