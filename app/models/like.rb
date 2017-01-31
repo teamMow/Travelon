@@ -4,6 +4,6 @@ class Like < ApplicationRecord
 	validates :article, presence: true
 
 
-	belongs_to :user
 	belongs_to :article
+	belongs_to :user
 end
