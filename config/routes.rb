@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
 # Articleコントローラ
 
+
   get 'articles/new'
   # post '/articles' => 'articles#create'
   # get '/articles' => 'articles#index'
@@ -15,15 +16,20 @@ Rails.application.routes.draw do
   delete '/article/:id' => 'articles#destroy', as: 'destroy_article'
 
 
+
     # デバイス用のルーティングを自動生成
     devise_for :users
+
     resources :users, only: [:edit, :update, :index, :destroy, :show] do
     get :likes, on: :member
-   end
+    end
+    resources :articles do
+     resource :likes, only: [:create, :destroy]
+    end
 
-   resources :articles do
-    resource :likes, only: [:create, :destroy]
-  end
+    
+
+   
 
   root 'articles#index'
   

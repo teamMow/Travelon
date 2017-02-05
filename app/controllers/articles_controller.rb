@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
   	# @article = Article.new
   	# @article.title = params[:title]
   	# @article.content =params[:content]
-  	@article.user_id = current_user.id
+  	# @article.user_id = current_user.id
 
   	if @article.save
   		redirect_to @article, notice: '投稿が成功しました'

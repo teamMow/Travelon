@@ -2,10 +2,9 @@
 <% @users.each do |user| %>
 	<p>名前</p>
 	<span><%= link_to user.name, user_path(user.id) %></span>
-
 <% end %>
 
-<%= paginate @users %>
+<p><%= paginate @users %></p>
 
 
 

@@ -1,6 +1,8 @@
 <h1>Article一覧</h1>
 
+
 <div class="index-content clearfix">
+
 	<tbody>
 
 	<% @articles.each do |article| %>
@@ -84,9 +86,10 @@
 	<% end %>
 
 	</tbody>
+
 </div>
 
-<%= paginate @articles %>
+<p><%= paginate @articles %></p>
 
 
 
