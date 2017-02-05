@@ -7,10 +7,10 @@ class LikesController < ApplicationController
 		@like = current_user.likes.build(article: @article)
 
 		if @like.save
-			redirect_to article_path(@article), notice: "いいねしました"
+			redirect_to articles_path(@article), notice: "いいねしました"
 			logger.info "いいねしました"
 		else
-			redirect_to article_path(@article), alert: "いいねできません"
+			redirect_to articles_path(@article), alert: "いいねできません"
 		end
 	end
 

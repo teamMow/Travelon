@@ -1,93 +1,89 @@
 <h1>Article一覧</h1>
 
 <div class="index-content clearfix">
-<tbody>
-<% @articles.each do |article| %>
-	<!-- <p>タイトル</p> -->
-	<h2 class="article-title"><%= link_to article.title, article_path(article.id) %></h2>
-	<br>
+	<tbody>
 
-	<!-- <p>内容</p> -->
-	<h3 class="article-content"><%= article.content %></h3>
-	<br>
+	<% @articles.each do |article| %>
+	  <div class="tabi">
+		<!-- <p>タイトル</p> -->
+		<h2 class="article-title"><%= link_to article.title, article_path(article.id) %></h2>
+		<br>
 
-	<!-- <p>場所</p> -->
-	<h3 class="article-area"><%= article.area %></h3>
-	<br>
+		<!-- どや -->
+		<div class="article-doya">
+		<h3><%= article.doya %>どや</h3>
+			<% if article.doya == 1 %>
+				<div class="star" ><p>★</p></div>
+				<div class="star" ><p>☆</p></div>
+				<div class="star" ><p>☆</p></div>
+				<div class="star" ><p>☆</p></div>
+				<div class="star" ><p>☆</p></div>
+			<% elsif article.doya == 2 %>
+				<div class="star" ><p>★</p></div>
+				<div class="star" ><p>★</p></div>
+				<div class="star" ><p>☆</p></div>
+				<div class="star" ><p>☆</p></div>
+				<div class="star" ><p>☆</p></div>
+			<% elsif article.doya == 3 %>
+				<div class="star" ><p>★</p></div>
+				<div class="star" ><p>★</p></div>
+				<div class="star" ><p>★</p></div>
+				<div class="star" ><p>☆</p></div>
+				<div class="star" ><p>☆</p></div>
+			<% elsif article.doya == 4 %>
+				<div class="star" ><p>★</p></div>
+				<div class="star" ><p>★</p></div>
+				<div class="star" ><p>★</p></div>
+				<div class="star" ><p>★</p></div>
+				<div class="star" ><p>☆</p></div>
+			<% elsif article.doya == 5 %>
+				<div class="star" ><p>★</p></div>
+				<div class="star" ><p>★</p></div>
+				<div class="star" ><p>★</p></div>
+				<div class="star" ><p>★</p></div>
+				<div class="star" ><p>★</p></div>
 
+				<!-- 地球のアイコン() -->
+				<div class="earth-image">
+				 <%= image_tag '/earth.jpg' %>
+				</div>
 
-	<!-- どや -->
-	<div class="article-doya">
-	<h3><%= article.doya %>どや</h3>
-		<% if article.doya == 1 %>
-			<div class="star" ><p>★</p></div>
-			<div class="star" ><p>☆</p></div>
-			<div class="star" ><p>☆</p></div>
-			<div class="star" ><p>☆</p></div>
-			<div class="star" ><p>☆</p></div>
-		<% elsif article.doya == 2 %>
-			<div class="star" ><p>★</p></div>
-			<div class="star" ><p>★</p></div>
-			<div class="star" ><p>☆</p></div>
-			<div class="star" ><p>☆</p></div>
-			<div class="star" ><p>☆</p></div>
-		<% elsif article.doya == 3 %>
-			<div class="star" ><p>★</p></div>
-			<div class="star" ><p>★</p></div>
-			<div class="star" ><p>★</p></div>
-			<div class="star" ><p>☆</p></div>
-			<div class="star" ><p>☆</p></div>
-		<% elsif article.doya == 4 %>
-			<div class="star" ><p>★</p></div>
-			<div class="star" ><p>★</p></div>
-			<div class="star" ><p>★</p></div>
-			<div class="star" ><p>★</p></div>
-			<div class="star" ><p>☆</p></div>
-		<% elsif article.doya == 5 %>
-			<div class="star" ><p>★</p></div>
-			<div class="star" ><p>★</p></div>
-			<div class="star" ><p>★</p></div>
-			<div class="star" ><p>★</p></div>
-			<div class="star" ><p>★</p></div>
+			<% else article.doya %>
+				<p>NOどや</p>
+			<% end %>
+		</div>
+		<br>
 
-			<!-- 地球のアイコン() -->
-			<div class="earth-image">
-			 <%= image_tag '/earth.jpg' %>
-			</div>
-		<% else article.doya %>
-			<p>NOどや</p>
-		<% end %>
-	</div>
-	<br>
+		<!-- <p>画像</p> -->
+		<h3 class="article-image"><%= image_tag article.img %></h3>
+		<br>
 
-	<!-- <p>画像</p> -->
-	<h3 class="article-image"><%= image_tag article.img %></h3>
-	<br>
+		<h3 class="article-hobby">＃<%= article.hobby %></h3>
+		<br>
 
-	<h3 class="article-hobby">＃<%= article.hobby %></h3>
-	<br>
+		<div class="article-like">
+		<tr>
+	       <td>
+	            <% if article.liked_by? current_user %>
+	              <%= link_to "いいね解除", article_likes_path(article), method: :delete %>
+	              <div class="like-image">
+	               <%= image_tag '/heart1.png' %>
+	              </div>
+	            <% else %>
+	              <%= link_to "いいね", article_likes_path(article), method: :post %>
+	              <div class="like-image">
+	                <%= image_tag '/heart2.png' %>
+	              </div>
+	            <% end %>
+	        </td>
+	    </tr>
+	    </div>
 
-	<div class="article-like">
-	<tr>
-       <td>
-            <% if article.liked_by? current_user %>
-              <%= link_to "いいね解除", article_likes_path(article), method: :delete %>
-              <div class="like-image">
-               <%= image_tag '/heart1.png' %>
-              </div>
-            <% else %>
-              <%= link_to "いいね", article_likes_path(article), method: :post %>
-              <div class="like-image">
-                <%= image_tag '/heart2.png' %>
-              </div>
-            <% end %>
-        </td>
-    </tr>
-    </div>
+	   </div>
+ 
+	<% end %>
 
-<% end %>
-
-</tbody>
+	</tbody>
 </div>
 
 <%= paginate @articles %>
