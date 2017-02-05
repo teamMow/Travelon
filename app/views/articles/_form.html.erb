@@ -19,8 +19,6 @@
 	<%= f.file_field :img, class: "article" %>
 	</div>
 
-
-
 	<div class="form-group">
 	どや度
 	<%= f.collection_select :doya, Star.all, :id, :id %>
@@ -37,12 +35,8 @@
 	<%= f.collection_select :hobby, Hobby.all, :body, :body %>
 	</div>
 
-
 	<div class="form-group">
 	<%= f.submit "投稿する", class: "article, article-submit, btn btn-success" %>
 
-	
-
-	
 <% end %>
 

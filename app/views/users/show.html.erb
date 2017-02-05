@@ -1,4 +1,4 @@
-<h1>ユーザー情報</h1>
+  <h1>ユーザー情報</h1>
 名前
 
 
@@ -27,18 +27,24 @@
     </li>
 </ul>
 
-
+<div class="user-article-index">
 <% @user.articles.each do |article| %>
     <h4 class="user">
         <span class="user-name">
-          <%= link_to article.user.email, user_path(article.user) %>
+          <%= link_to article.user.name, user_path(article.user) %>
         </span>
-    <span class="user-id"><%= article.user.email %></span>
+        <span class="user-id"><%= article.user.email %></span>
     </h4>
+
+    <div class="article-title">
+      <%= article.title %>
+    </div>
+
     <div class= "article-content">
         <%= article.content %>
-    </div>  
+    </div> 
 <% end %>
+</div>
 
 <%= link_to "編集", edit_user_path(@user.id) %>
 <%= link_to "削除", user_path(@user.id), method: :delete, "data-comfirum" => "本当に削除しますか？" %>
