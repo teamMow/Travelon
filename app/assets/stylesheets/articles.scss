@@ -1,0 +1,130 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/*共通*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.clearfix::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+h1{
+	text-align: center;
+}
+
+h2{
+	text-align: center;
+}
+
+h3{
+	text-align: center;
+}
+
+
+/*新規作成_form*/
+.new_article{
+	width: 700px;
+	height: 500px;
+	margin:0 auto;
+	display: block;
+	line-height: 30px;
+	text-align: center;
+	/*background-image: url("http://pds.exblog.jp/pds/1/201104/07/39/e0207439_20191388.jpg");*/
+	background-size: cover;
+}
+
+.article{
+	opacity: .7;
+}
+
+
+/*一覧ページindex/詳細ページshow*/
+.article-container{
+	width: 500px;
+	height: auto;
+	margin: 0 auto;
+	background-color: #afeeee;
+}
+
+.article-title{
+	width: 400px;
+	height: auto;
+	background-color: white;
+	margin: 0 auto;
+}
+
+.article-content{
+	width: 400px;
+	height: auto;
+	background-color: white;
+	margin: 0 auto;
+}
+
+.article-area{
+	width: 400px;
+	height: auto;
+	background-color: white;
+	margin: 0 auto;
+}
+
+.article-image{
+	text-align: center;
+}
+
+
+
+.article-doya{
+	width: 100px;
+	height: auto;
+	margin: 0 auto;
+	position: relative;
+}
+
+.article-hobby{
+  width: 100px;
+  height: auto;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.article-like{
+  width: 100px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+
+
+/*どや*/
+.star{
+    color: orange;
+    margin: auto;
+    display: block;
+    float: left;
+}
+
+.star>div {
+    float: left;
+}
+
+/*どや　地球*/
+.earth-image img{
+	width: 30px;
+	height: 30px;
+}
+
+/*いいね画像*/
+.like-image img{
+	width: 20px;
+	height: 20px;
+}
+
+
+
