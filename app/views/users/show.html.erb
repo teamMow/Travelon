@@ -1,0 +1,56 @@
+  <h1>ユーザー情報</h1>
+
+名前
+
+
+<p><%= @user.name %></p>
+出身地
+<p><%= @user.birthplace %></p>
+性別
+<p><%= @user.sex %></p>
+年齢
+<p><%= @user.age %></p>
+
+
+
+<ul>
+    <li>
+      <%= link_to likes_user_path(@user) do %>
+        <div class="text">投稿数</div>
+        <div class="num"><%= @user.articles.count %></div>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to likes_user_path(@user) do %>
+        <div class="text">いいね一覧</div>
+        <div class="num"><%= @user.likes.count %></div>
+      <% end %>     
+    </li>
+</ul>
+
+<div class="user-article-index">
+<% @user.articles.each do |article| %>
+    <h4 class="user">
+        <span class="user-name">
+          <%= link_to article.user.name, user_path(article.user) %>
+        </span>
+        <span class="user-id"><%= article.user.email %></span>
+    </h4>
+
+    <div class="article-title">
+      <%= article.title %>
+    </div>
+
+    <div class= "article-content">
+        <%= article.content %>
+    </div> 
+<% end %>
+</div>
+
+
+ <% if current_user.id == @user.id %>
+  <%= link_to "編集", edit_user_path(current_user.id) %>
+  <%= link_to "削除", user_path(current_user), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+  <% end %>
+
+

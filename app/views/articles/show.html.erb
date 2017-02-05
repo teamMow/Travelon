@@ -1,0 +1,110 @@
+<h1>旅の記録</h1>
+
+
+<% if current_user.id == @article.user_id %>
+	<%= link_to "編集", edit_article_path(@article.id) %>
+	<%= link_to "削除", destroy_article_path(@article.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+<% end %>
+
+
+<p id="notice" class="alert alert-success">
+  <%= notice %>
+</p>
+
+<div class="article-container">
+	<h3>タイトル</h3>
+	<p class="article-title"><%= @article.title %></p>
+	<br>
+
+	<h3>内容</h3>
+	<div class="article-content"><%= @article.content %></div>
+	<br>
+
+	<h3>場所</h3>
+	<p class="article-area"><%= @article.area %></p>
+	<br>
+
+
+	<h3>どや度</h3>
+	<div class="article-doya">
+	<p><%= @article.doya %>どや</p>
+			<% if @article.doya == 1 %>
+				<div class="star" ><p>★</p></div>
+				<div class="star" ><p>☆</p></div>
+				<div class="star" ><p>☆</p></div>
+				<div class="star" ><p>☆</p></div>
+				<div class="star" ><p>☆</p></div>
+			<% elsif @article.doya == 2 %>
+				<div class="star" ><p>★</p></div>
+				<div class="star" ><p>★</p></div>
+				<div class="star" ><p>☆</p></div>
+				<div class="star" ><p>☆</p></div>
+				<div class="star" ><p>☆</p></div>
+			<% elsif @article.doya == 3 %>
+				<div class="star" ><p>★</p></div>
+				<div class="star" ><p>★</p></div>
+				<div class="star" ><p>★</p></div>
+				<div class="star" ><p>☆</p></div>
+				<div class="star" ><p>☆</p></div>
+			<% elsif @article.doya == 4 %>
+				<div class="star" ><p>★</p></div>
+				<div class="star" ><p>★</p></div>
+				<div class="star" ><p>★</p></div>
+				<div class="star" ><p>★</p></div>
+				<div class="star" ><p>☆</p></div>
+			<% elsif @article.doya == 5 %>
+				<div class="star" ><p>★</p></div>
+				<div class="star" ><p>★</p></div>
+				<div class="star" ><p>★</p></div>
+				<div class="star" ><p>★</p></div>
+				<div class="star" ><p>★</p></div>
+			<% else @article.doya %>
+				<p>NOドヤ</p>
+			<% end %>
+	</div>
+	<br>
+
+	<h3>Photo</h3>
+	<div class="article-image"><%= image_tag@article.img %></div>
+	<br>
+
+	<h3>Hobby</h3>
+	<div class="article-hobby"><%= @article.hobby %></div>
+	<br>
+
+
+	<tr>
+       <td>
+            <% if @article.liked_by? current_user %>
+              <%= link_to "いいね解除", article_likes_path(@article), method: :delete %>
+              <div class="like-image">
+               <%= image_tag '/heart1.png' %>
+              </div>
+            <% else %>
+              <%= link_to "いいね", article_likes_path(@article), method: :post %>
+              <div class="like-image">
+                <%= image_tag '/heart2.png' %>
+              </div>
+            <% end %>
+        </td>
+    </tr>
+
+	<div>
+	  <small>
+	    <%= link_to @article.likes.count, article_path(@article.id), id: 'like-count' %> 人がいいね！しました
+	  </small>
+	</div>
+
+</div>
+
+
+<% if current_user.id == @article.user_id %>
+	<%= link_to "編集", edit_article_path(@article.id) %>
+	<%= link_to "削除", destroy_article_path(@article.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+<% end %>
+
+ 
+
+
+
+<%= link_to "一覧ページ", articles_path %>
