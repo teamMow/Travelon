@@ -24,7 +24,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
-  	@articles = Article.page(params[:page]).per(5).includes(:user)
+  	@articles = Article.page(params[:page]).per(6).includes(:user)
   end
 
   def show
