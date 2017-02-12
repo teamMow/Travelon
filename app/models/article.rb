@@ -1,7 +1,7 @@
 class Article < ApplicationRecord
 	validates :title, presence: true
 	validates :content, presence: true
-	validates :area, presence: :true
+	validates :area, presence: true
 
 	mount_uploader :img, ImageUploader
 
