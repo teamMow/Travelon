@@ -41,22 +41,36 @@
     </li>
 </ul>
 
+
+
 <div class="user-article-index">
 <% @user.articles.each do |article| %>
-    <h4 class="user">
-        <span class="user-name">
-          <%= link_to article.user.name, user_path(article.user) %>
-        </span>
-        <span class="user-id"><%= article.user.email %></span>
-    </h4>
 
-    <div class="article-title">
-      <%= article.title %>
-    </div>
+  <div class="col-md-4">
 
-    <div class= "article-content">
-        <%= article.content %>
-    </div> 
+      <h4 class="user">
+          <span class="user-name">
+            <%= link_to article.user.name, user_path(article.user) %>
+          </span>
+       </h4>
+
+      <div class="article-title">
+        <%= article.title %>
+      </div>
+
+      <div class= "article-content">
+          <%= article.content %>
+      </div> 
+
+      <div class="article-hobby">
+          #<%= article.hobby %>
+      </div>
+
+      <div class="user-article-img">
+        <%= image_tag article.img %>
+      </div>
+
+  </div>
 <% end %>
 </div>
 

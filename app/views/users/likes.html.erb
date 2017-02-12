@@ -20,16 +20,30 @@
     </div>
 <% end %>
 
+
 <% @user.likes.map { |f| f.article }.each do |article| %>
 
-    <h4 class="user">
-        <span class="user-email">
-          <%= link_to article.user.email, user_path(article.user) %>
-        </span>
-    <span class="user-id"><%= article.user.email %></span>
-    </h4>
+    <div class="col-md-4 like-article">
 
-    <div class="article-content">
-        <%= article.content %>
-    </div>  
+        <h4 class="user">
+            <span class="user-email">
+              <%= link_to article.user.name, user_path(article.user) %>
+            </span>
+        </h4>
+
+        <div class="article-content">
+            <%= article.content %>
+        </div> 
+
+        <div class="article-hobby">
+          #<%= article.hobby %>
+        </div>
+
+        <div class="user-article-img">
+          <%= image_tag article.img %>
+        </div>
+
+    </div>
+
+
 <% end %>
