@@ -31,14 +31,11 @@
 
 </div>
 
-<h3>
-      <%= link_to likes_user_path(@user) %>
-        <div class="text">いいね一覧<%= @user.likes.count %></div>
+<li>
+      <%= link_to 'いいね一覧',likes_user_path(@user) %>
+        <!-- <div class="text">いいね一覧<%= @user.likes.count %></div> -->
         <!-- <div class="num"><%= @user.likes.count %></div> -->
-
-      <%= link_to user_path(@user) %>
-      <div class="text">戻る</div>
-</h3>
+</li>
 
 
 
