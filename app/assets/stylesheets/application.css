@@ -27,3 +27,26 @@ header .container {
   margin-top: 20%;
 }
 
+.page3 {
+	height: 200px;
+	width: 300px;
+	background-color: #FFFAFA;
+}
+
+.page4 {
+	height: 200px;
+	width: 200px;
+	background-color: #FFFAFA;
+}
+
+.word {
+	margin-top: 50px;
+	text-align: center;
+	font-size: 18px;
+}
+
+.title {
+	color: #00FF00;
+	padding-top: 20px;
+}
+

@@ -25,13 +25,21 @@ h2{
 
 h3{
 	text-align: center;
-	color: blue;
 }
 
 /*画像の大きさ指定*/
 .article-image img{
 	width: 270px;
 	height: 200px;
+}
+
+.article-image-show {
+	text-align: center;
+}
+
+.article-image-show img{
+	width: 200px;
+	height: 130px;
 }
 
 /*どやの幅指定*/
