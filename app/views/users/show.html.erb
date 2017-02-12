@@ -35,16 +35,15 @@
 
     </div>
 
-    <li>
-          <%= link_to 'いいね一覧',likes_user_path(@user) %>
+    <h3>
+          <%= link_to 'いいねした項目',likes_user_path(@user) %>
             <!-- <div class="text">いいね一覧<%= @user.likes.count %></div> -->
             <!-- <div class="num"><%= @user.likes.count %></div> -->
-    </li>
+    </h3>
 
 
 
     <h2>投稿一覧<%= @user.articles.count %></h2>
-        <%= link_to user_path(@user) %>
           <!-- <div class="text">投稿数<%= @user.articles.count %></div> -->
           <!-- <div class="num"><%= @user.articles.count %></div> -->
 
