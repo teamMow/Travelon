@@ -3,8 +3,8 @@
 	<% @users.each do |user| %>
 		<div class="col-md-4">
 			<div class="page3">
-				<h3>名前</h3>
-				<span class=""><%= link_to user.name, user_path(user.id) %></span>
+				<h3 class="title">名前</h3>
+				<p class="word"><%= link_to user.name, user_path(user.id) %></p>
 			</div>
 		</div>
 	<% end %>
