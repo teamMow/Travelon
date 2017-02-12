@@ -1,17 +1,15 @@
 <ul>
     <li>
-      <%= link_to user_path(@user) do %>
-        <div class="text">投稿数</div>
-        <div class="num"><%= @user.articles.count %></div>
+      <%= link_to likes_user_path(@user) do %>
+        <div class="text">いいね一覧<%= @user.likes.count %>件</div>
+        <!-- <div class="num"><%= @user.likes.count %></div> -->
       <% end %>
     </li>
 
-    <li>
-      <%= link_to likes_user_path(@user) do %>
-        <div class="text">いいね一覧</div>
-        <div class="num"><%= @user.likes.count %></div>
-      <% end %>     
-    </li>
+      
+      <li>
+        <%= link_to '戻る', user_path(@user) %> 
+      </li>
 </ul>
 
 <% if @user.likes.empty? %>
@@ -20,16 +18,34 @@
     </div>
 <% end %>
 
+
 <% @user.likes.map { |f| f.article }.each do |article| %>
 
-    <h4 class="user">
-        <span class="user-email">
-          <%= link_to article.user.email, user_path(article.user) %>
-        </span>
-    <span class="user-id"><%= article.user.email %></span>
-    </h4>
+    <div class="col-md-4 like-article">
 
-    <div class="article-content">
-        <%= article.content %>
-    </div>  
+        <h4 class="user">
+            <span class="user-email">
+              <%= link_to article.user.name, user_path(article.user) %>
+            </span>
+        </h4>
+
+        <div class="article-content">
+            <%= article.content %>
+        </div> 
+
+        <div class="article-hobby">
+          #<%= article.hobby %>
+        </div>
+
+        <div class="user-article-img">
+          <%= image_tag article.img %>
+        </div>
+
+        <div class="like-image">
+          <%= image_tag '/heart1.png' %>
+          <%= link_to article.likes.count, article_path(article.id), id: 'like-count' %> 人がいいね！
+        </div>
+    </div>
+
+
 <% end %>
