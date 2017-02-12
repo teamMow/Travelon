@@ -17,7 +17,7 @@ class LikesController < ApplicationController
 	def destroy
 		@like = current_user.likes.find_by!(article_id: params[:article_id])
 		@like.destroy
-		redirect_to article_path(@article), notice: "いいねを削除しました"
+		redirect_to articles_path, notice: "いいねを削除しました"
 	end
 
 end
