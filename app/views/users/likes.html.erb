@@ -4,17 +4,13 @@
   <div class="col-md-10 col-xs-12">
 
     <ul>
-        <li>
-          <%= link_to likes_user_path(@user) do %>
-            <div class="text">いいね一覧<%= @user.likes.count %>件</div>
+        <p>
+            <div class="text">いいねした項目<%= @user.likes.count %>件</div>
             <!-- <div class="num"><%= @user.likes.count %></div> -->
-          <% end %>
-        </li>
+        </p>
 
           
-          <li>
-            <%= link_to '戻る', user_path(@user) %> 
-          </li>
+          
     </ul>
 
     <% if @user.likes.empty? %>
@@ -28,11 +24,7 @@
 
         <div class="col-md-4 like-article">
 
-            <h4 class="user">
-                <span class="user-email">
-                  <%= link_to article.user.name, user_path(article.user) %>
-                </span>
-            </h4>
+          <div class="posting">
 
             <div class="article-content">
                 <%= article.content %>
@@ -50,6 +42,9 @@
               <%= image_tag '/heart1.png' %>
               <%= link_to article.likes.count, article_path(article.id), id: 'like-count' %> 人がいいね！
             </div>
+
+          </div>
+
         </div>
 
 
