@@ -25,38 +25,50 @@
 
 </div>
 
+<h3>
+      <%= link_to likes_user_path(@user) %>
+        <div class="text">いいね一覧<%= @user.likes.count %></div>
+        <!-- <div class="num"><%= @user.likes.count %></div> -->
 
-<ul>
-    <li>
-      <%= link_to likes_user_path(@user) do %>
-        <div class="text">投稿数</div>
-        <div class="num"><%= @user.articles.count %></div>
-      <% end %>
-    </li>
-    <li>
-      <%= link_to likes_user_path(@user) do %>
-        <div class="text">いいね一覧</div>
-        <div class="num"><%= @user.likes.count %></div>
-      <% end %>     
-    </li>
-</ul>
+      <%= link_to user_path(@user) %>
+      <div class="text">戻る</div>
+</h3>
+
+
+
+<h2>投稿一覧<%= @user.articles.count %></h2>
+    <%= link_to user_path(@user) %>
+      <!-- <div class="text">投稿数<%= @user.articles.count %></div> -->
+      <!-- <div class="num"><%= @user.articles.count %></div> -->
 
 <div class="user-article-index">
 <% @user.articles.each do |article| %>
-    <h4 class="user">
-        <span class="user-name">
-          <%= link_to article.user.name, user_path(article.user) %>
-        </span>
-        <span class="user-id"><%= article.user.email %></span>
-    </h4>
 
-    <div class="article-title">
-      <%= article.title %>
-    </div>
+  <div class="col-md-4">
 
-    <div class= "article-content">
-        <%= article.content %>
-    </div> 
+      <h4 class="user">
+          <span class="user-name">
+            <%= link_to article.user.name, user_path(article.user) %>
+          </span>
+       </h4>
+
+      <div class="article-title">
+        <%= article.title %>
+      </div>
+
+      <div class= "article-content">
+          <%= article.content %>
+      </div> 
+
+      <div class="article-hobby">
+          #<%= article.hobby %>
+      </div>
+
+      <div class="user-article-img">
+        <%= image_tag article.img %>
+      </div>
+
+  </div>
 <% end %>
 </div>
 
