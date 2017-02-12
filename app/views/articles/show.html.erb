@@ -13,21 +13,18 @@
 
 <div class="article-container">
 	<h3>タイトル</h3>
-	<p class="article-title"><%= @article.title %></p>
-	<br>
+	<p class="article-title"><%= @article.title %></p><br>
 
 	<h3>内容</h3>
-	<div class="article-content"><%= @article.content %></div>
-	<br>
+	<div class="article-content"><%= @article.content %></div><br>
 
 	<h3>場所</h3>
-	<p class="article-area"><%= @article.area %></p>
-	<br>
+	<p class="article-area"><%= @article.area %></p><br>
 
 
-	<h3>どや度</h3>
+	<h3>ドヤ度</h3>
 	<div class="article-doya">
-	<p><%= @article.doya %>どや</p>
+	<p><%= @article.doya %>ドヤ</p>
 			<% if @article.doya == 1 %>
 				<div class="star" ><p>★</p></div>
 				<div class="star" ><p>☆</p></div>
@@ -61,16 +58,13 @@
 			<% else @article.doya %>
 				<p>NOドヤ</p>
 			<% end %>
-	</div>
-	<br>
+	</div><br>
 
 	<h3>Photo</h3>
-	<div class="article-image"><%= image_tag@article.img %></div>
-	<br>
+	<div class="article-image"><%= image_tag@article.img %></div><br>
 
 	<h3>Hobby</h3>
-	<div class="article-hobby"><%= @article.hobby %></div>
-	<br>
+	<div class="article-hobby"><%= @article.hobby %></div><br>
 
 
 	<tr>

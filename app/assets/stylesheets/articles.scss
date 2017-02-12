@@ -28,6 +28,19 @@ h3{
 }
 
 
+/*画像の大きさ指定*/
+.article-image img{
+	width: 270px;
+	height: 200px;
+}
+
+/*どやの幅指定*/
+.article-doya{
+	width: 230px;
+	height: 55px;
+}
+
+
 /*どや*/
 .star{
     color: orange;
@@ -36,12 +49,7 @@ h3{
     float: left;
 }
 
-.star>div {
-    float: left;
-}
-
-/*どや　地球*/
-.earth-image img{
+.star img{
 	width: 30px;
 	height: 30px;
 }
@@ -51,6 +59,9 @@ h3{
 	width: 20px;
 	height: 20px;
 }
+
+
+
 
 
 

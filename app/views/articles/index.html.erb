@@ -15,46 +15,45 @@
 								<!-- どや -->
 				<div class="article-doya">
 					<h3><%= article.doya %>どや</h3>
-						<% if article.doya == 1 %>
-							<div class="star" ><p>★</p></div>
-							<div class="star" ><p>☆</p></div>
-							<div class="star" ><p>☆</p></div>
-							<div class="star" ><p>☆</p></div>
-							<div class="star" ><p>☆</p></div>
-						<% elsif article.doya == 2 %>
-							<div class="star" ><p>★</p></div>
-							<div class="star" ><p>★</p></div>
-							<div class="star" ><p>☆</p></div>
-							<div class="star" ><p>☆</p></div>
-							<div class="star" ><p>☆</p></div>
-						<% elsif article.doya == 3 %>
-							<div class="star" ><p>★</p></div>
-							<div class="star" ><p>★</p></div>
-							<div class="star" ><p>★</p></div>
-							<div class="star" ><p>☆</p></div>
-							<div class="star" ><p>☆</p></div>
-						<% elsif article.doya == 4 %>
-							<div class="star" ><p>★</p></div>
-							<div class="star" ><p>★</p></div>
-							<div class="star" ><p>★</p></div>
-							<div class="star" ><p>★</p></div>
-							<div class="star" ><p>☆</p></div>
-						<% elsif article.doya == 5 %>
-							<div class="star" ><p>★</p></div>
-							<div class="star" ><p>★</p></div>
-							<div class="star" ><p>★</p></div>
-							<div class="star" ><p>★</p></div>
-							<div class="star" ><p>★</p></div>
-
-										<!-- 地球のアイコン() -->
-							<!-- <div class="earth-image">
-								<%= image_tag '/earth.jpg' %>
-							</div> -->
-
-						<% else article.doya %>
-							<p>NOどや</p>
-						<% end %>
-				</div>
+						<div class="p-doya">
+							<% if article.doya == 1 %>
+								<!-- <div class="star" ><%= image_tag '/doya1.png' %></div> -->
+								<div class="star" ><p>★</p></div>
+								<div class="star" ><p>☆</p></div>
+								<div class="star" ><p>☆</p></div>
+								<div class="star" ><p>☆</p></div>
+								<div class="star" ><p>☆</p></div>
+							<% elsif article.doya == 2 %>
+								<!-- <div class="star" ><%= image_tag '/doya2.png' %></div>
+								<div class="star" ><%= image_tag '/doya2.png' %></div> -->
+								<div class="star" ><p>★</p></div>
+								<div class="star" ><p>★</p></div>
+								<div class="star" ><p>☆</p></div>
+								<div class="star" ><p>☆</p></div>
+								<div class="star" ><p>☆</p></div>
+							<% elsif article.doya == 3 %>
+								<div class="star" ><p>★</p></div>
+								<div class="star" ><p>★</p></div>
+								<div class="star" ><p>★</p></div>
+								<div class="star" ><p>☆</p></div>
+								<div class="star" ><p>☆</p></div>
+							<% elsif article.doya == 4 %>
+								<div class="star" ><p>★</p></div>
+								<div class="star" ><p>★</p></div>
+								<div class="star" ><p>★</p></div>
+								<div class="star" ><p>★</p></div>
+								<div class="star" ><p>☆</p></div>
+							<% elsif article.doya == 5 %>
+								<div class="star" ><p>★</p></div>
+								<div class="star" ><p>★</p></div>
+								<div class="star" ><p>★</p></div>
+								<div class="star" ><p>★</p></div>
+								<div class="star" ><p>★</p></div>
+							<% else article.doya %>
+								<p>NOどや</p>
+							<% end %>
+						</div>
+				　</div>
 				
 
 								<!-- <p>画像</p> -->
@@ -67,16 +66,15 @@
 				<div class="article-like">
 					<tr>
 				       <td>
-				            
 				              <%= link_to "いいね", article_likes_path(article), method: :post %>
 				              <div class="like-image">
 				                <%= image_tag '/heart1.png' %>
-				              </div>
-				            
+				                <%= link_to article.likes.count, article_path(article.id), id: 'like-count' %>いいね！
+				              </div>   
 				        </td>
 				    </tr>
-				    </div>
-			    </div>
+				</div>
+		</div>
 
 	<% end %>
 	</div>
