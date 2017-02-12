@@ -1,84 +1,93 @@
-  <h1>ユーザー情報</h1>
+<h1 class="top">ユーザー情報</h1>
 
-<div class="row">
-  <div class="col-md-3">
-    <div class="page4">
-      <h3 class="title">名前</h3>
-      <p class="word"><%= @user.name %></p>
+<div class="container">
+  <div class="col-md-1 col-xs-0"></div>
+  <div class="col-md-10 col-xs-12">
+
+    <div class="row">
+      <div class="col-md-3">
+        <div class="page4">
+          <h3 class="title">名前</h3>
+          <p class="word"><%= @user.name %></p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="page4">
+          <h3 class="title">出身地</h3>
+          <p class="word"><%= @user.birthplace %></p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="page4">
+          <h3 class="title">性別</h3>
+          <p class="word"><%= @user.sex %></p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="page4">
+          <h3 class="title">年齢</h3>
+          <p class="word"><%= @user.age %></p>
+        </div>
+      </div>
+
     </div>
+
+    <li>
+          <%= link_to 'いいね一覧',likes_user_path(@user) %>
+            <!-- <div class="text">いいね一覧<%= @user.likes.count %></div> -->
+            <!-- <div class="num"><%= @user.likes.count %></div> -->
+    </li>
+
+
+
+    <h2>投稿一覧<%= @user.articles.count %></h2>
+        <%= link_to user_path(@user) %>
+          <!-- <div class="text">投稿数<%= @user.articles.count %></div> -->
+          <!-- <div class="num"><%= @user.articles.count %></div> -->
+
+    <div class="user-article-index">
+    <% @user.articles.each do |article| %>
+
+      <div class="col-md-4">
+
+          <h4 class="user">
+              <span class="user-name">
+                <%= link_to article.user.name, user_path(article.user) %>
+              </span>
+           </h4>
+
+          <div class="article-title">
+            <%= article.title %>
+          </div>
+
+          <div class= "article-content">
+              <%= article.content %>
+          </div> 
+
+          <div class="article-hobby">
+              #<%= article.hobby %>
+          </div>
+
+          <div class="user-article-img">
+            <%= image_tag article.img %>
+          </div>
+
+      </div>
+    <% end %>
+    </div>
+
+
+     <% if current_user.id == @user.id %>
+      <%= link_to "編集", edit_user_path(current_user.id) %>
+      <%= link_to "削除", user_path(current_user), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+      <% end %>
   </div>
 
-  <div class="col-md-3">
-    <div class="page4">
-      <h3 class="title">出身地</h3>
-      <p class="word"><%= @user.birthplace %></p>
-    </div>
-  </div>
-
-  <div class="col-md-3">
-    <div class="page4">
-      <h3 class="title">性別</h3>
-      <p class="word"><%= @user.sex %></p>
-    </div>
-  </div>
-
-  <div class="col-md-3">
-    <div class="page4">
-      <h3 class="title">年齢</h3>
-      <p class="word"><%= @user.age %></p>
-    </div>
-  </div>
+  <div class="col-md-1 col-xs-0"></div>
 
 </div>
-
-<li>
-      <%= link_to 'いいね一覧',likes_user_path(@user) %>
-        <!-- <div class="text">いいね一覧<%= @user.likes.count %></div> -->
-        <!-- <div class="num"><%= @user.likes.count %></div> -->
-</li>
-
-
-
-<h2>投稿一覧<%= @user.articles.count %></h2>
-    <%= link_to user_path(@user) %>
-      <!-- <div class="text">投稿数<%= @user.articles.count %></div> -->
-      <!-- <div class="num"><%= @user.articles.count %></div> -->
-
-<div class="user-article-index">
-<% @user.articles.each do |article| %>
-
-  <div class="col-md-4">
-
-      <h4 class="user">
-          <span class="user-name">
-            <%= link_to article.user.name, user_path(article.user) %>
-          </span>
-       </h4>
-
-      <div class="article-title">
-        <%= article.title %>
-      </div>
-
-      <div class= "article-content">
-          <%= article.content %>
-      </div> 
-
-      <div class="article-hobby">
-          #<%= article.hobby %>
-      </div>
-
-      <div class="user-article-img">
-        <%= image_tag article.img %>
-      </div>
-
-  </div>
-<% end %>
-</div>
-
-
- <% if current_user.id == @user.id %>
-  <%= link_to "編集", edit_user_path(current_user.id) %>
-  <%= link_to "削除", user_path(current_user), method: :delete, "data-confirm" => "本当に削除しますか？" %>
-  <% end %>
 
 
