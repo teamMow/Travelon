@@ -1,16 +1,25 @@
-<h1>ユーザー一覧</h1>
-<div class="row">
-	<% @users.each do |user| %>
-		<div class="col-md-4">
-			<div class="page3">
-				<h3 class="title">名前</h3>
-				<p class="word"><%= link_to user.name, user_path(user.id) %></p>
-			</div>
-		</div>
-	<% end %>
-</div>
+<h1 class="top">ユーザー一覧</h1>
 
-<p><%= paginate @users %></p>
+<div class="container">
+ 	<div class="col-md-1 col-xs-0"></div>
+  	<div class="col-md-10 col-xs-12">
+
+		
+		<div class="row">
+			<% @users.each do |user| %>
+				<div class="col-md-4">
+					<div class="page3">
+						<h3 class="title">名前</h3>
+						<p class="word"><%= link_to user.name, user_path(user.id) %></p>
+					</div>
+				</div>
+			<% end %>
+		</div>
+
+		<p><%= paginate @users %></p>
+	</div>
+ 	<div class="col-md-1 col-xs-0"></div>
+</div>
 
 
 
