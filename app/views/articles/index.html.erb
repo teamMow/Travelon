@@ -1,85 +1,80 @@
 <h1>Article一覧</h1>
 
 
-<div class="index-content clearfix">
-
-	<tbody>
+<div class="clearfix">
 
 	<div class="row">
 	<% @articles.each do |article| %>
+		
 		<div class="col-md-4">
 								<!-- <p>タイトル</p> -->
 			<h2 class="article-title"><%= link_to article.title, article_path(article.id) %></h2>
 								
 
-								<!-- どや -->
-				<div class="article-doya">
-					<h3><%= article.doya %>どや</h3>
-						<div class="p-doya">
-							<% if article.doya == 1 %>
-								<!-- <div class="star" ><%= image_tag '/doya1.png' %></div> -->
-								<div class="star" ><p>★</p></div>
-								<div class="star" ><p>☆</p></div>
-								<div class="star" ><p>☆</p></div>
-								<div class="star" ><p>☆</p></div>
-								<div class="star" ><p>☆</p></div>
-							<% elsif article.doya == 2 %>
-								<!-- <div class="star" ><%= image_tag '/doya2.png' %></div>
-								<div class="star" ><%= image_tag '/doya2.png' %></div> -->
-								<div class="star" ><p>★</p></div>
-								<div class="star" ><p>★</p></div>
-								<div class="star" ><p>☆</p></div>
-								<div class="star" ><p>☆</p></div>
-								<div class="star" ><p>☆</p></div>
-							<% elsif article.doya == 3 %>
-								<div class="star" ><p>★</p></div>
-								<div class="star" ><p>★</p></div>
-								<div class="star" ><p>★</p></div>
-								<div class="star" ><p>☆</p></div>
-								<div class="star" ><p>☆</p></div>
-							<% elsif article.doya == 4 %>
-								<div class="star" ><p>★</p></div>
-								<div class="star" ><p>★</p></div>
-								<div class="star" ><p>★</p></div>
-								<div class="star" ><p>★</p></div>
-								<div class="star" ><p>☆</p></div>
-							<% elsif article.doya == 5 %>
-								<div class="star" ><p>★</p></div>
-								<div class="star" ><p>★</p></div>
-								<div class="star" ><p>★</p></div>
-								<div class="star" ><p>★</p></div>
-								<div class="star" ><p>★</p></div>
-							<% else article.doya %>
-								<p>NOどや</p>
-							<% end %>
-						</div>
-				　</div>
-				
 
-								<!-- <p>画像</p> -->
-				<h3 class="article-image"><%= image_tag article.img %></h3>
-								
+			<div class="article-doya">
+				<h3><%= article.doya %>どや</h3>
+					<% if article.doya == 1 %>
+						<div class="star" ><p>★</p></div>
+						<div class="star" ><p>☆</p></div>
+						<div class="star" ><p>☆</p></div>
+						<div class="star" ><p>☆</p></div>
+						<div class="star" ><p>☆</p></div>
+					<% elsif article.doya == 2 %>
+						<div class="star" ><p>★</p></div>
+						<div class="star" ><p>★</p></div>
+						<div class="star" ><p>☆</p></div>
+						<div class="star" ><p>☆</p></div>
+						<div class="star" ><p>☆</p></div>
+					<% elsif article.doya == 3 %>
+						<div class="star" ><p>★</p></div>
+						<div class="star" ><p>★</p></div>
+						<div class="star" ><p>★</p></div>
+						<div class="star" ><p>☆</p></div>
+						<div class="star" ><p>☆</p></div>
+					<% elsif article.doya == 4 %>
+						<div class="star" ><p>★</p></div>
+						<div class="star" ><p>★</p></div>
+						<div class="star" ><p>★</p></div>
+						<div class="star" ><p>★</p></div>
+						<div class="star" ><p>☆</p></div>
+					<% elsif article.doya == 5 %>
+						<div class="star" ><p>★</p></div>
+						<div class="star" ><p>★</p></div>
+						<div class="star" ><p>★</p></div>
+						<div class="star" ><p>★</p></div>
+						<div class="star" ><p>★</p></div>
+					<% else article.doya %>
+						<p>NOどや</p>
+					<% end %>
+			</div>
+			
 
-				<h3 class="article-hobby">＃<%= article.hobby %></h3>
-								
+							<!-- <p>画像</p> -->
+			<h3 class="article-image"><%= image_tag article.img %></h3>
+							
 
-				<div class="article-like">
-					<tr>
-				       <td>
-				              <%= link_to "いいね", article_likes_path(article), method: :post %>
-				              <div class="like-image">
-				                <%= image_tag '/heart1.png' %>
-				                <%= link_to article.likes.count, article_path(article.id), id: 'like-count' %>いいね！
-				              </div>   
-				        </td>
-				    </tr>
-				</div>
+			<h3 class="article-hobby">＃<%= article.hobby %></h3>
+							
+
+			<div class="article-like">
+				<tr>
+			       <td>
+			              <%= link_to "いいね", article_likes_path(article), method: :post %>
+			              <div class="like-image">
+			                <%= image_tag '/heart2.png' %>
+			              </div>
+			            
+			        </td>
+			    </tr>
+			</div>
+			
 		</div>
 
 	<% end %>
 	</div>
 
-	</tbody>
+	
 
 </div>
 
