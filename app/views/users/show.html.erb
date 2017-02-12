@@ -51,13 +51,7 @@
     <% @user.articles.each do |article| %>
 
       <div class="col-md-4">
-
-          <h4 class="user">
-              <span class="user-name">
-                <%= link_to article.user.name, user_path(article.user) %>
-              </span>
-           </h4>
-
+        <div class="posting">
           <div class="article-title">
             <%= article.title %>
           </div>
@@ -73,16 +67,16 @@
           <div class="user-article-img">
             <%= image_tag article.img %>
           </div>
-
+        </div>
       </div>
     <% end %>
     </div>
 
 
-     <% if current_user.id == @user.id %>
+    <% if current_user.id == @user.id %>
       <%= link_to "編集", edit_user_path(current_user.id) %>
       <%= link_to "削除", user_path(current_user), method: :delete, "data-confirm" => "本当に削除しますか？" %>
-      <% end %>
+    <% end %></p>
   </div>
 
   <div class="col-md-1 col-xs-0"></div>
