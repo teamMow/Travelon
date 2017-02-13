@@ -17,14 +17,30 @@
 
 
 header.jumbotron {
-      background: url("header2.jpg");
-      background-position: center center;
-      background-size: cover;
-      color: #fff;
-    }
+	height: 100vh;
+	background: url("header2.jpg");
+	background-position: center center;
+	background-size: cover;
+	color: #fff;
+}
     
 header .container {
-  margin-top: 20%;
+	margin-top: 200px;
+}
+
+.main-title {
+	font-size: 63px;
+	text-align: center;
+	color: white;
+	text-shadow: 0 0 7px gray;
+}
+
+.sab-title {
+	padding-top: 40px;
+	text-align: center;
+	color: white;
+	text-shadow: 0 0 7px gray;
+
 }
 
 .page3 {
@@ -50,3 +66,11 @@ header .container {
 	padding-top: 20px;
 }
 
+.top {
+	padding-top: 50px;
+}
+
+.posting {
+	padding-top: 30px;
+	text-align: center;
+}
