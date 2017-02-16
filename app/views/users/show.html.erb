@@ -5,40 +5,41 @@
   <div class="col-md-10 col-xs-12">
 
     <div class="row">
-      <div class="col-md-3">
-        <div class="page4">
-          <h3 class="title">名前</h3>
-          <p class="word"><%= @user.name %></p>
+        <div class="col-md-3">
+          <div class="page4">
+            <h3 class="title">名前</h3>
+            <p class="word"><%= @user.name %></p>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-3">
-        <div class="page4">
-          <h3 class="title">出身地</h3>
-          <p class="word"><%= @user.birthplace %></p>
+        <div class="col-md-3">
+          <div class="page4">
+            <h3 class="title">出身地</h3>
+            <p class="word"><%= @user.birthplace %></p>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-3">
-        <div class="page4">
-          <h3 class="title">性別</h3>
-          <p class="word"><%= @user.sex %></p>
+        <div class="col-md-3">
+          <div class="page4">
+            <h3 class="title">性別</h3>
+            <p class="word"><%= @user.sex %></p>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-3">
-        <div class="page4">
-          <h3 class="title">年齢</h3>
-          <p class="word"><%= @user.age %></p>
+        <div class="col-md-3">
+          <div class="page4">
+            <h3 class="title">年齢</h3>
+            <p class="word"><%= @user.age %></p>
+          </div>
         </div>
-      </div>
-
     </div>
 
+
+
     <h3>
-          <%= link_to 'いいねした項目',likes_user_path(@user) %>
-            <!-- <div class="text">いいね一覧<%= @user.likes.count %></div> -->
-            <!-- <div class="num"><%= @user.likes.count %></div> -->
+      <%= link_to 'いいねした項目',likes_user_path(@user) %>
+        <!-- <div class="text">いいね一覧<%= @user.likes.count %></div> -->
+        <!-- <div class="num"><%= @user.likes.count %></div> -->
     </h3>
 
 
@@ -47,30 +48,48 @@
           <!-- <div class="text">投稿数<%= @user.articles.count %></div> -->
           <!-- <div class="num"><%= @user.articles.count %></div> -->
 
+
     <div class="user-article-index">
-    <% @user.articles.each do |article| %>
+        <% @user.articles.each do |article| %>
 
-      <div class="col-md-4">
-        <div class="posting">
-          <div class="article-title">
-            <%= article.title %>
+            <div class="col-md-4">
+                <div class="posting">
+                    <div class="article-title">
+                      <%= article.title %>
+                    </div>
+
+                    <div class= "article-content">
+                        <%= article.content %>
+                    </div> 
+
+                    <div class="article-hobby">
+                        #<%= article.hobby %>
+                    </div>
+
+                    <div class="user-article-img">
+                      <%= image_tag article.img %>
+                    </div>
+              </div>
           </div>
-
-          <div class= "article-content">
-              <%= article.content %>
-          </div> 
-
-          <div class="article-hobby">
-              #<%= article.hobby %>
-          </div>
-
-          <div class="user-article-img">
-            <%= image_tag article.img %>
-          </div>
-        </div>
-      </div>
-    <% end %>
+        <% end %>
     </div>
+
+
+
+
+    <li>
+      <%= link_to follows_user_path(@user) do %>
+        <div class="text">フォロー</div>
+        <div class="num"><%= @user.followings.count %></div>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to followers_user_path(@user) do %>
+        <div class="text">フォロワー</div>
+        <div class="num"><%= @user.followers.count %></div>
+      <% end %>
+    </li>
+
 
 
     <% if current_user.id == @user.id %>

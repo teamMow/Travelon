@@ -1,0 +1,45 @@
+<h3>フォロー一覧</h3>
+
+<ul>
+    <li>
+      <%= link_to user_path(@user) do %>
+        <div class="text">投稿数</div>
+        <div class="num"><%= @user.articles.count %></div>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to follows_user_path(@user) do %>
+        <div class="text">フォロー</div>
+        <div class="num"><%= @user.followings.count %></div>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to followers_user_path(@user) do %>
+        <div class="text">フォロワー</div>
+        <div class="num"><%= @user.followers.count %></div>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to likes_user_path(@user) do %>
+        <div class="text">いいね一覧</div>
+        <div class="num"><%= @user.likes.count %></div>
+      <% end %>     
+    </li>
+</ul>
+
+<% @user.followings.each do |u| %>
+    <div>
+        <%= link_to u.name, user_path(u) %>
+        <span>@<%= u.name %></span>
+    </div>
+    <div class="bio">
+        <%= u.bio %>
+    </div>
+    <div class="follow-unfollow">
+        <% if u.followed_by? current_user %>
+          <%= link_to "フォロー解除", user_relationships_path(u), method: :delete %>
+        <% else %>
+          <%= link_to "フォロー", user_relationships_path(u), method: :post %>
+        <% end %>
+    </div>
+<% end %>
