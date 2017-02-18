@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
 
-  get 'relationship/create'
-
 # homeコントローラ
   get 'home/top' => 'home#top'
   get 'home/about' => 'home#about'
@@ -25,7 +23,6 @@ Rails.application.routes.draw do
     devise_for :users
 
     resources :users, only: [:edit, :update, :index, :destroy, :show] do
-      # get :likes, on: :member
       resource :relationship, only: [:create, :destroy]
       get :follows, on: :member
       get :followers, on: :member

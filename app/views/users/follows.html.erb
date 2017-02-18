@@ -29,12 +29,10 @@
 
 <% @user.followings.each do |u| %>
     <div>
-        <%= link_to u.name, user_path(u) %>
+        <%= link_to u.name, user_path(u.id) %>
         <span>@<%= u.name %></span>
     </div>
-    <div class="bio">
-        <%= u.bio %>
-    </div>
+
     <div class="follow-unfollow">
         <% if u.followed_by? current_user %>
           <%= link_to "フォロー解除", user_relationships_path(u), method: :delete %>
