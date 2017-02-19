@@ -17,7 +17,6 @@
 
 					<!-- どや -->
 					<div class="article-doya">
-						<h3><%= article.doya %>どや</h3>
 							<% if article.doya == 1 %>
 								<div class="star" ><p>★</p></div>
 								<div class="star" ><p>☆</p></div>
@@ -78,13 +77,14 @@
 
 
 				
-
+				<!-- フォローボタン -->
 					<% if article.user.followed_by? current_user %>
 		              <%= link_to "フォロー中", user_relationship_path(article.user), method: :delete, class: "glyphicon glyphicon-user" %>
 		            <% else %>
 		              <%= link_to "フォローする", user_relationship_path(article.user), method: :post, class: "glyphicon glyphicon-thumbs-up" %>
 		            <% end %>
 
+				
 		            
 				</div>
 
