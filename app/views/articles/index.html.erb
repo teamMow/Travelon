@@ -77,11 +77,11 @@
 
 					<!-- フォローボタン -->
 					<% if article.user.followed_by? current_user %>
-		              <%= link_to "フォロー解除", user_relationship_path(article.user), method: :delete,class: "glyphicon glyphicon-thumbs-up" %>
+		              <%= link_to "フォロー解除", user_relationship_path(article.user), method: :delete, class: 'glyphicon glyphicon-thumbs-up' %>
 		            <% else %>
-		              <%= link_to "フォロー", user_relationship_path(article.user), method: :post,class: "glyphicon glyphicon-thumbs-down" %>
+		              <%= link_to "フォロー", user_relationship_path(article.user), method: :post, class: 'glyphicon glyphicon-thumbs-down' %>
 		            <% end %>
-					
+		            
 				</div>
 
 			<% end %>
