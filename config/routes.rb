@@ -23,11 +23,17 @@ Rails.application.routes.draw do
     devise_for :users
 
     resources :users, only: [:edit, :update, :index, :destroy, :show] do
-    get :likes, on: :member
+      resource :relationship, only: [:create, :destroy]
+      get :follows, on: :member
+      get :followers, on: :member
+      get :likes, on: :member
+
     end
+
     resources :articles do
      resource :likes, only: [:create, :destroy]
     end
+
 
   root 'articles#index'
   

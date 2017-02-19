@@ -1,0 +1,58 @@
+<h3>フォロワー一覧</h3>
+
+<div class="container">
+  <div class="col-md-1 col-xs-0"></div>
+  <div class="col-md-10 col-xs-12">
+
+    <div class="row">
+        <div class="col-md-4">
+      		<%= link_to user_path(@user) do %>
+	        <div class="glyphicon glyphicon-file" aria-hidden="true"">投稿数</div>
+	        <div class="num"><%= @user.articles.count %></div>
+	      <% end %>
+	    </div>
+
+
+	   	<div class="col-md-4">
+	      	<%= link_to follows_user_path(@user) do %>
+	        <div class="glyphicon glyphicon-user" aria-hidden="true">フォロー</div>
+	        <div class="num"><%= @user.followings.count %></div>
+	      <% end %>
+	    </div>
+    
+
+    	<div class="col-md-4">
+	      <%= link_to followers_user_path(@user) do %>
+	        <div class="glyphicon glyphicon-user" aria-hidden="true"">フォロワー</div>
+	        <div class="num"><%= @user.followers.count %></div>
+	      <% end %>
+	    </div>
+
+
+	    <div class="col-md-4">
+	      <%= link_to likes_user_path(@user) do %>
+	        <div class="glyphicon glyphicon-heart" aria-hidden="true"">いいね一覧</div>
+	        <div class="num"><%= @user.likes.count %></div>
+	      <% end %> 
+	    </div>
+
+
+	<div class="col-md-10">
+		<% @user.followers.each do |u| %>
+		    <div>
+		        <%= link_to u.name, user_path(u) %>
+		        <span>@<%= u.name %></span>
+		    </div>
+
+		    <div class="follow-unfollow">
+		        <% if u.followed_by? current_user %>
+		          <%= link_to "フォロー中", user_relationship_path(u), method: :delete, class: "glyphicon glyphicon-user" %>
+		        <% else %>
+		          <%= link_to "フォローする", user_relationship_path(u), method: :post, class: "glyphicon glyphicon-thumbs-up" %>
+		        <% end %>
+		    </div>
+		<% end %>
+	</div>
+
+	</div>
+</div>

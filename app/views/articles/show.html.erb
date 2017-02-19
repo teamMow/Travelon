@@ -1,113 +1,133 @@
-<h1>旅の記録</h1>
+<h1 class="top">旅の記録</h1>
+
+<div class="container">
+ 	<div class="col-md-1 col-xs-0"></div>
+  	<div class="col-md-10 col-xs-12">
+
+
+		<div class="row">
+			<div class="col-md-4">
+				<div class="page3">
+					<h3 class="title">タイトル</h3>
+					<p class="word"><%= @article.title %></p><br>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="page3">
+					<h3 class="title">内容</h3>
+					<div class="word"><%= @article.content %></div><br>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="page3">
+					<h3 class="title">場所</h3>
+					<p class="word"><%= @article.area %></p><br>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="page3">
+					<h3 class="title">ドヤ度</h3>
+					<div class="word">
+					<p><%= @article.doya %>ドヤ</p>
+							<% if @article.doya == 1 %>
+								<div class="star" ><p>★</p></div>
+								<div class="star" ><p>☆</p></div>
+								<div class="star" ><p>☆</p></div>
+								<div class="star" ><p>☆</p></div>
+								<div class="star" ><p>☆</p></div>
+							<% elsif @article.doya == 2 %>
+								<div class="star" ><p>★</p></div>
+								<div class="star" ><p>★</p></div>
+								<div class="star" ><p>☆</p></div>
+								<div class="star" ><p>☆</p></div>
+								<div class="star" ><p>☆</p></div>
+							<% elsif @article.doya == 3 %>
+								<div class="star" ><p>★</p></div>
+								<div class="star" ><p>★</p></div>
+								<div class="star" ><p>★</p></div>
+								<div class="star" ><p>☆</p></div>
+								<div class="star" ><p>☆</p></div>
+							<% elsif @article.doya == 4 %>
+								<div class="star" ><p>★</p></div>
+								<div class="star" ><p>★</p></div>
+								<div class="star" ><p>★</p></div>
+								<div class="star" ><p>★</p></div>
+								<div class="star" ><p>☆</p></div>
+							<% elsif @article.doya == 5 %>
+								<div class="star" ><p>★</p></div>
+								<div class="star" ><p>★</p></div>
+								<div class="star" ><p>★</p></div>
+								<div class="star" ><p>★</p></div>
+								<div class="star" ><p>★</p></div>
+							<% else @article.doya %>
+								<p>NOドヤ</p>
+							<% end %>
+					</div><br>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="page3">
+					<h3 class="title">Photo</h3>
+					<div class="article-image-show"><%= image_tag@article.img %></div><br>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="page3">
+					<h3 class="title">Hobby</h3>
+					<div class="word">#<%= @article.hobby %></div><br>
+				</div>
+			</div>
+
+			 <h5 class="article-hobby"><%= @article.user.name %></h5>
+
+
+			<tr>
+		       <td>
+		            <% if @article.liked_by? current_user %>
+		              <%= link_to "いいね解除", article_likes_path(@article), method: :delete %>
+		              <div class="like-image">
+		               <%= image_tag '/heart1.png' %>
+		              </div>
+		            <% else %>
+		              <%= link_to "いいね", article_likes_path(@article), method: :post %>
+		              <div class="like-image">
+		                <%= image_tag '/heart2.png' %>
+		              </div>
+		            <% end %>
+		        </td>
+		    </tr>
+
+			<div>
+			  <small>
+			    <%= link_to @article.likes.count, article_path(@article.id), id: 'like-count' %> 人がいいね！しました
+			  </small>
+			</div>
 
 
 
-<div class="row">
-	<div class="col-md-4">
-		<div class="page3">
-			<h3 class="title">タイトル</h3>
-			<p class="word"><%= @article.title %></p><br>
-		</div>
-	</div>
-
-	<div class="col-md-4">
-		<div class="page3">
-			<h3 class="title">内容</h3>
-			<div class="word"><%= @article.content %></div><br>
-		</div>
-	</div>
-
-	<div class="col-md-4">
-		<div class="page3">
-			<h3 class="title">場所</h3>
-			<p class="word"><%= @article.area %></p><br>
-		</div>
-	</div>
-
-	<div class="col-md-4">
-		<div class="page3">
-			<h3 class="title">ドヤ度</h3>
-			<div class="word">
-			<p><%= @article.doya %>ドヤ</p>
-					<% if @article.doya == 1 %>
-						<div class="star" ><p>★</p></div>
-						<div class="star" ><p>☆</p></div>
-						<div class="star" ><p>☆</p></div>
-						<div class="star" ><p>☆</p></div>
-						<div class="star" ><p>☆</p></div>
-					<% elsif @article.doya == 2 %>
-						<div class="star" ><p>★</p></div>
-						<div class="star" ><p>★</p></div>
-						<div class="star" ><p>☆</p></div>
-						<div class="star" ><p>☆</p></div>
-						<div class="star" ><p>☆</p></div>
-					<% elsif @article.doya == 3 %>
-						<div class="star" ><p>★</p></div>
-						<div class="star" ><p>★</p></div>
-						<div class="star" ><p>★</p></div>
-						<div class="star" ><p>☆</p></div>
-						<div class="star" ><p>☆</p></div>
-					<% elsif @article.doya == 4 %>
-						<div class="star" ><p>★</p></div>
-						<div class="star" ><p>★</p></div>
-						<div class="star" ><p>★</p></div>
-						<div class="star" ><p>★</p></div>
-						<div class="star" ><p>☆</p></div>
-					<% elsif @article.doya == 5 %>
-						<div class="star" ><p>★</p></div>
-						<div class="star" ><p>★</p></div>
-						<div class="star" ><p>★</p></div>
-						<div class="star" ><p>★</p></div>
-						<div class="star" ><p>★</p></div>
-					<% else @article.doya %>
-						<p>NOドヤ</p>
-					<% end %>
-			</div><br>
-		</div>
-	</div>
-
-	<div class="col-md-4">
-		<div class="page3">
-			<h3 class="title">Photo</h3>
-			<div class="article-image-show"><%= image_tag@article.img %></div><br>
-		</div>
-	</div>
-
-	<div class="col-md-4">
-		<div class="page3">
-			<h3 class="title">Hobby</h3>
-			<div class="word">#<%= @article.hobby %></div><br>
-		</div>
-	</div>
-
-
-	<tr>
-       <td>
-            <% if @article.liked_by? current_user %>
-              <%= link_to "いいね解除", article_likes_path(@article), method: :delete %>
-              <div class="like-image">
-               <%= image_tag '/heart1.png' %>
-              </div>
+			<!-- フォローボタン -->
+			<% if @article.user.followed_by? current_user %>
+              <%= link_to "フォロー中", user_relationship_path(@article.user), method: :delete, class: "glyphicon glyphicon-user" %>
             <% else %>
-              <%= link_to "いいね", article_likes_path(@article), method: :post %>
-              <div class="like-image">
-                <%= image_tag '/heart2.png' %>
-              </div>
+              <%= link_to "フォローする", user_relationship_path(@article.user), method: :post, class: "glyphicon glyphicon-thumbs-up" %>
             <% end %>
-        </td>
-    </tr>
 
-	<div>
-	  <small>
-	    <%= link_to @article.likes.count, article_path(@article.id), id: 'like-count' %> 人がいいね！しました
-	  </small>
+		</div>
+
+
+		<% if current_user.id == @article.user_id %>
+			<%= link_to "編集", edit_article_path(@article.id) %>
+			<%= link_to "削除", destroy_article_path(@article.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+		<% end %>
+
 	</div>
+
+	<div class="col-md-1 col-xs-0"></div>
 
 </div>
-
-
-<% if current_user.id == @article.user_id %>
-	<%= link_to "編集", edit_article_path(@article.id) %>
-	<%= link_to "削除", destroy_article_path(@article.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
-<% end %>
 

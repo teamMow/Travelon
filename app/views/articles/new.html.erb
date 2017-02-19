@@ -1,18 +1,23 @@
-<h1>隠れスポットを紹介しよう</h1>
+<h1 class="top">隠れスポットを紹介しよう</h1>
 
-<% if @article.errors.any? %>
-    <div id="error_explanation" class="alert alert-danger">
-      <h2><%= @article.errors.count %>件のエラーがあります。</h2>
+<div class="container">
+ 	<div class="col-md-1 col-xs-0"></div>
+  	<div class="col-md-10 col-xs-12">
+		<% if @article.errors.any? %>
+		    <div id="error_explanation" class="alert alert-danger">
+		      <h2><%= @article.errors.count %>件のエラーがあります。</h2>
 
-      <ul>
-        <% @article.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  
+		      <ul>
+		        <% @article.errors.full_messages.each do |message| %>
+		          <li><%= message %></li>
+		        <% end %>
+		      </ul>
+		    </div>
+		  <% end %>
+	</div>
 
-<%= render'form' %>
-<p><%= link_to "TOP", root_path %></p>
+	<%= render'form' %>
+
+	<div class="col-md-1 col-xs-0"></div>
+</div>
 
