@@ -43,7 +43,9 @@
 
 
 
-    <h2>投稿一覧(<%= @user.articles.count %>)</h2>
+
+    <h2>投稿一覧<%= @user.articles.count %></h2>
+
           <!-- <div class="text">投稿数<%= @user.articles.count %></div> -->
           <!-- <div class="num"><%= @user.articles.count %></div> -->
 
@@ -76,7 +78,7 @@
     <% if current_user.id == @user.id %>
       <%= link_to "編集", edit_user_path(current_user.id) %>
       <%= link_to "削除", user_path(current_user), method: :delete, "data-confirm" => "本当に削除しますか？" %>
-    <% end %></p>
+    <% end %>
   </div>
 
   <div class="col-md-1 col-xs-0"></div>
