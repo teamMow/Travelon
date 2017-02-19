@@ -1,0 +1,76 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require bootstrap.min
+ *= require_tree .
+ *= require_self
+ */
+
+
+header.jumbotron {
+	height: 100vh;
+	background: url("header2.jpg");
+	background-position: center center;
+	background-size: cover;
+	color: #fff;
+}
+    
+header .container {
+	margin-top: 200px;
+}
+
+.main-title {
+	font-size: 63px;
+	text-align: center;
+	color: white;
+	text-shadow: 0 0 7px gray;
+}
+
+.sab-title {
+	padding-top: 40px;
+	text-align: center;
+	color: white;
+	text-shadow: 0 0 7px gray;
+
+}
+
+.page3 {
+	height: 200px;
+	width: 300px;
+	background-color: #FFFAFA;
+}
+
+.page4 {
+	height: 200px;
+	width: 200px;
+	background-color: #FFFAFA;
+}
+
+.word {
+	margin-top: 50px;
+	text-align: center;
+	font-size: 18px;
+}
+
+.title {
+	color: #00FF00;
+	padding-top: 20px;
+}
+
+.top {
+	padding-top: 50px;
+}
+
+.posting {
+	padding-top: 30px;
+	text-align: center;
+}
