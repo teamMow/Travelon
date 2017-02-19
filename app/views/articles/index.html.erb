@@ -60,6 +60,8 @@
 					<!-- 趣味タグ -->
 					<h3 class="article-hobby">＃<%= article.hobby %></h3>
 
+					<!-- <h5 class="article-hobby"><%= article.user.name %></h5> -->
+
 
 					<!-- いいねボタン -->
 					<div class="article-like">
@@ -75,12 +77,14 @@
 					</div>
 
 
-					<!-- フォローボタン -->
+				
+
 					<% if article.user.followed_by? current_user %>
 		              <%= link_to "フォロー中", user_relationship_path(article.user), method: :delete, class: "glyphicon glyphicon-user" %>
 		            <% else %>
 		              <%= link_to "フォローする", user_relationship_path(article.user), method: :post, class: "glyphicon glyphicon-thumbs-up" %>
 		            <% end %>
+
 		            
 				</div>
 

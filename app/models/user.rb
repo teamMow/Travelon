@@ -19,7 +19,11 @@ class User < ApplicationRecord
 
   # フォロー済みかどうか
   def followed_by? user
-  	inverse_follows.where(follower_id: user.id).exists?
+    if !user.blank?
+  	 inverse_follows.where(follower_id: user.id).exists?
+    else
+      return false
+    end
   end
   
 end
