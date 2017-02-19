@@ -65,8 +65,8 @@
 					<div class="article-like">
 						<tr>
 					       <td>
-					              <%= link_to "いいね", article_likes_path(article), method: :post %>
 					              <div class="like-image">
+					              	<%= link_to "いいね", article_likes_path(article), method: :post %>
 					                <%= image_tag '/heart1.png' %>
 					                <%= link_to article.likes.count, article_path(article.id), id: 'like-counnat' %> 人がいいね！
 					              </div>
@@ -77,9 +77,9 @@
 
 					<!-- フォローボタン -->
 					<% if article.user.followed_by? current_user %>
-		              <%= link_to "フォロー解除", user_relationship_path(article.user), method: :delete, class: 'glyphicon glyphicon-thumbs-up' %>
+		              <%= link_to "フォロー中", user_relationship_path(article.user), method: :delete, class: "glyphicon glyphicon-user" %>
 		            <% else %>
-		              <%= link_to "フォロー", user_relationship_path(article.user), method: :post, class: 'glyphicon glyphicon-thumbs-down' %>
+		              <%= link_to "フォローする", user_relationship_path(article.user), method: :post, class: "glyphicon glyphicon-thumbs-up" %>
 		            <% end %>
 		            
 				</div>
