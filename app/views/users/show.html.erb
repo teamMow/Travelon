@@ -36,7 +36,7 @@
 
     <% if current_user.id == @user.id %>
       <%= link_to "編集", edit_user_path(current_user.id) %>
-      <%= link_to "削除", user_path(current_user), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+      <%= link_to "削除", user_path(current_user.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
     <% end %>
 
 
