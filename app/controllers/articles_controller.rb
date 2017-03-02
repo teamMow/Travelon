@@ -16,11 +16,11 @@ class ArticlesController < ApplicationController
   	# @article.user_id = current_user.id
 
   	if @article.save
-  		redirect_to @article, notice: '投稿が成功しました'
-  		# redirect_to article_path(@article.id)
-    else
-    	render :new
-    end
+    		redirect_to @article, notice: '投稿が成功しました'
+    		# redirect_to article_path(@article.id)
+      else
+      	render :new
+      end
   end
 
   def index
@@ -34,16 +34,16 @@ class ArticlesController < ApplicationController
   end
 
   def update
-  	@article.update(article_params)
-  	# @article.title = params[:title]
-  	# @article.content = params[:content]
-  	# @article.area = params[:area]
-  	if @article.save
-  		redirect_to @article, notice: '投稿が更新されました'
-  		# redirect_to article_path(@article.id)
-    else
-    	render :edit
-    end
+    	@article.update(article_params)
+    	# @article.title = params[:title]
+    	# @article.content = params[:content]
+    	# @article.area = params[:area]
+    	if @article.save
+    		redirect_to @article, notice: '投稿が更新されました'
+    		# redirect_to article_path(@article.id)
+      else
+      	render :edit
+      end
   end
 
   def destroy
@@ -63,12 +63,10 @@ class ArticlesController < ApplicationController
   	end
 
     def correct_user
-      article = Article.find(params[:id])
-      if current_user.id != article.user.id
-        redirect_to root_path
-      end
+        article = Article.find(params[:id])
+        if current_user.id != article.user.id
+          redirect_to root_path
+        end
     end
-
-
 end
 

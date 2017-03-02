@@ -6,12 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Article.create(doya: "0")
-Article.create(doya: "1")
-Article.create(doya: "2")
-Article.create(doya: "3")
-Article.create(doya: "4")
-Article.create(doya: "5")
+
+Star.create(id: "0")
+Star.create(id: "1")
+Star.create(id: "2")
+Star.create(id: "3")
+Star.create(id: "4")
+Star.create(id: "5")
+
 
 Hobby.create(body: "旅行")
 Hobby.create(body: "スポーツ")
