@@ -1,4 +1,4 @@
-<h1 class="top">Article一覧</h1>
+<h1 class="top">Stpos!</h1>
 
 <div class="container">
  	<div class="col-md-1 col-xs-0"></div>
@@ -8,12 +8,12 @@
 
 			<div class="row">
 			<% @articles.each do |article| %>
-				
-				<div class="col-md-4">
+
+				<div class="article-content col-md-4">
 
 					<!-- <p>タイトル</p> -->
 					<h2 class="article-title"><%= link_to article.title, article_path(article.id) %></h2>
-										
+
 
 					<!-- どや -->
 					<div class="article-doya">
@@ -51,11 +51,11 @@
 								<p>NOどや</p>
 							<% end %>
 					</div>
-					
+
 
 					<!-- <p>画像</p> -->
 					<h3 class="article-image"><%= image_tag article.img %></h3>
-									
+
 					<!-- 趣味タグ -->
 					<h3 class="article-hobby">＃<%= article.hobby %></h3>
 
@@ -74,13 +74,14 @@
 					        </td>
 					    </tr>
 					</div>
-				
+
 				<!-- フォローボタン -->
 					<% if article.user.followed_by? current_user %>
 		              <%= link_to "フォロー中", user_relationship_path(article.user), method: :delete, class: "glyphicon glyphicon-user" %>
 		            <% else %>
 		              <%= link_to "フォローする", user_relationship_path(article.user), method: :post, class: "glyphicon glyphicon-thumbs-up" %>
 		            <% end %>
+		            <%= social_share_button_tag(article.title) %>
 				</div>
 			<% end %>
 			</div>
