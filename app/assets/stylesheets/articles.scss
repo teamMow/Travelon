@@ -76,22 +76,20 @@ p{
 }
 
 /*どやの幅指定*/
-.article-doya {
-	display: inline-block;
-}
-
-
 /*どや*/
 .star{
     color: orange;
-    margin: auto;
-    display: block;
-    float: left;
+    display: inline-block;
 }
 
 .star img{
 	width: 30px;
 	height: 30px;
+}
+
+.doya-all{
+	display: inline-block;
+	padding-left: 100px;
 }
 
 /*いいね画像*/
@@ -100,6 +98,9 @@ p{
 	height: 20px;
 }
 
+.like-image{
+	display: inline-block;
+}
 
 /*シェアボタン*/
 .social-share-button{
