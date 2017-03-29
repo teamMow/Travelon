@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  root 'home#top'
 
 # homeコントローラ
   get 'home/top' => 'home#top'
@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   # get 'articles/new'
   # post '/articles' => 'articles#create'
   # get '/articles' => 'articles#index'
-  
   # get '/articles/:id' => 'articles#show', as: 'article'
   get '/articles/:id/edit' => 'articles#edit', as: 'edit_article'
   patch '/articles/:id' => 'articles#update', as: 'update_article'
@@ -34,9 +33,6 @@ Rails.application.routes.draw do
      resource :likes, only: [:create, :destroy]
     end
 
-
-  root 'articles#index'
-  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 end
