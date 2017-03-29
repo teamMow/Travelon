@@ -1,4 +1,4 @@
-<h1 class="top">旅の記録</h1>
+<h1 class="top">Travel log</h1>
 
 <div class="container">
  	<div class="col-md-1 col-xs-0"></div>
@@ -83,7 +83,7 @@
 				</div>
 			</div>
 
-			 <h5 class="article-hobby"><%= @article.user.name %></h5>
+			 <h5 class="article-hobby"><%=link_to @article.user.name, user_path(@article.user.id) %></h5>
 
 
 			<tr>
@@ -124,6 +124,9 @@
 			<%= link_to "編集", edit_article_path(@article.id) %>
 			<%= link_to "削除", destroy_article_path(@article.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
 		<% end %>
+
+
+		<%= social_share_button_tag(@article.title) %>
 
 	</div>
 

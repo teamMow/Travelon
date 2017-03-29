@@ -13,9 +13,11 @@
  *= require bootstrap.min
  *= require_tree .
  *= require_self
+ *= require social-share-button
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import url('https://fonts.googleapis.com/css?family=Boogaloo');
 
 
 header.jumbotron {
@@ -25,7 +27,7 @@ header.jumbotron {
 	background-size: cover;
 	color: #fff;
 }
-    
+
 header .container {
 	margin-top: 200px;
 }
@@ -75,6 +77,10 @@ header .container {
 .posting {
 	padding-top: 30px;
 	text-align: center;
+}
+
+h1{
+	font-family: 'Boogaloo', cursive;
 }
 
 

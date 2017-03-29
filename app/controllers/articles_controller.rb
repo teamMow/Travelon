@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
   	# @article = Article.new(title: params[:title], content: params[:content])
   	# @article = Article.new
   	# @article.title = params[:title]
-  	# @article.content =params[:content]
+  	# @article.content = params[:content]
   	# @article.user_id = current_user.id
 
   	if @article.save

@@ -29,6 +29,17 @@ gem 'therubyracer', platforms: :ruby
 gem 'hirb'
 # gem 'bullet'
 
+gem 'social-share-button'
+
+# ユーザーログイン
+gem 'devise'
+
+# 画像挿入
+gem 'rmagick'
+gem 'carrierwave'
+
+gem 'kaminari'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -51,15 +62,6 @@ gem "rubycritic", :require => false
 gem 'better_errors'
 gem 'binding_of_caller'
 
-
-# ユーザーログイン
-gem 'devise'
-
-# 画像挿入
-gem 'rmagick'
-gem 'carrierwave'
-
-gem 'kaminari'
 
 
 group :development, :test do
