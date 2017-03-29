@@ -27,4 +27,3 @@ Hobby.create(body: "ファッション")
 Hobby.create(body: "ゲーム")
 Hobby.create(body: "ランニング")
 Hobby.create(body: "散歩")
-

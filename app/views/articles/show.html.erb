@@ -30,42 +30,42 @@
 			<div class="col-md-4">
 				<div class="page3">
 					<h3 class="title">ドヤ度</h3>
-					<div class="word">
-					<p><%= @article.doya %>ドヤ</p>
+					<div class="word"><%= @article.doya %>どや</div>
+						<div class="doya-all">
 							<% if @article.doya == 1 %>
-								<div class="star" ><p>★</p></div>
-								<div class="star" ><p>☆</p></div>
-								<div class="star" ><p>☆</p></div>
-								<div class="star" ><p>☆</p></div>
-								<div class="star" ><p>☆</p></div>
+								<div class="star" >★</div>
+								<div class="star" >☆</div>
+								<div class="star" >☆</div>
+								<div class="star" >☆</div>
+								<div class="star" >☆</div>
 							<% elsif @article.doya == 2 %>
-								<div class="star" ><p>★</p></div>
-								<div class="star" ><p>★</p></div>
-								<div class="star" ><p>☆</p></div>
-								<div class="star" ><p>☆</p></div>
-								<div class="star" ><p>☆</p></div>
+								<div class="star" >★</div>
+								<div class="star" >★</div>
+								<div class="star" >☆</div>
+								<div class="star" >☆</div>
+								<div class="star" >☆</div>
 							<% elsif @article.doya == 3 %>
-								<div class="star" ><p>★</p></div>
-								<div class="star" ><p>★</p></div>
-								<div class="star" ><p>★</p></div>
-								<div class="star" ><p>☆</p></div>
-								<div class="star" ><p>☆</p></div>
+								<div class="star" >★</div>
+								<div class="star" >★</div>
+								<div class="star" >★</div>
+								<div class="star" >☆</div>
+								<div class="star" >☆</div>
 							<% elsif @article.doya == 4 %>
-								<div class="star" ><p>★</p></div>
-								<div class="star" ><p>★</p></div>
-								<div class="star" ><p>★</p></div>
-								<div class="star" ><p>★</p></div>
-								<div class="star" ><p>☆</p></div>
+								<div class="star" >★</div>
+								<div class="star" >★</div>
+								<div class="star" >★</div>
+								<div class="star" >★</div>
+								<div class="star" >☆</div>
 							<% elsif @article.doya == 5 %>
-								<div class="star" ><p>★</p></div>
-								<div class="star" ><p>★</p></div>
-								<div class="star" ><p>★</p></div>
-								<div class="star" ><p>★</p></div>
-								<div class="star" ><p>★</p></div>
+								<div class="star" >★</div>
+								<div class="star" >★</div>
+								<div class="star" >★</div>
+								<div class="star" >★</div>
+								<div class="star" >★</div>
 							<% else @article.doya %>
-								<p>NOドヤ</p>
+								<div class="star">NOドヤ</div>
 							<% end %>
-					</div><br>
+						</div>
 				</div>
 			</div>
 
@@ -83,21 +83,18 @@
 				</div>
 			</div>
 
-			 <h5 class="article-hobby"><%=link_to @article.user.name, user_path(@article.user.id) %></h5>
-
-
 			<tr>
 		       <td>
 		            <% if @article.liked_by? current_user %>
-		              <%= link_to "いいね解除", article_likes_path(@article), method: :delete %>
 		              <div class="like-image">
 		               <%= image_tag '/heart1.png' %>
 		              </div>
+		              <%= link_to "いいね解除", article_likes_path(@article), method: :delete %>
 		            <% else %>
-		              <%= link_to "いいね", article_likes_path(@article), method: :post %>
 		              <div class="like-image">
 		                <%= image_tag '/heart2.png' %>
 		              </div>
+		              <%= link_to "いいね", article_likes_path(@article), method: :post %>
 		            <% end %>
 		        </td>
 		    </tr>
@@ -108,6 +105,7 @@
 			  </small>
 			</div>
 
+			<h5 class="article-hobby"><%=link_to @article.user.name, user_path(@article.user.id) %>さんのオススメSPOT</h5>
 
 
 			<!-- フォローボタン -->
