@@ -5,17 +5,17 @@
   	<div class="col-md-10 col-xs-12">
 		<% if @article.errors.any? %>
 		    <div id="error_explanation" class="alert alert-danger">
-		      <h2><%= @article.errors.count %>件のエラーがあります。</h2>
+			      <h2><%= @article.errors.count %>件のエラーがあります。</h2>
 
-		      <ul>
-		        <% @article.errors.full_messages.each do |message| %>
-		          <li><%= message %></li>
-		        <% end %>
-		      </ul>
+			      <ul>
+				        <% @article.errors.full_messages.each do |message| %>
+				          	<li><%= message %></li>
+				        <% end %>
+			      </ul>
 		    </div>
-		  <% end %>
-		  <%= render'form' %>
+		 <% end %>
 
+		  <%= render'form' %>
 	</div>
 
 	<div class="col-md-1 col-xs-0"></div>

@@ -7,11 +7,6 @@ class UsersController < ApplicationController
 
 	def update
 		@user.update(user_params)
-		# @user.name = params[:user][:name]
-		# @user.birthplace = params[:user][:birthplace]
-		# @user.sex = params[:user][:sex]
-		# @user.age = params[:user][:age]
-		# @user.save
 		redirect_to user_path(@user.id)
 	end
 
@@ -28,15 +23,12 @@ class UsersController < ApplicationController
 	end
 
 	def likes
-		# @user = User.find(params[:id])
 	end
 
 	def follows
-    	# @user = User.find(params[:id])
 	end
 
 	def followers
-	    # @user = User.find(params[:id])
 	end
 
 
