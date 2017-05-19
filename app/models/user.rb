@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-         
+
   has_many :articles, dependent: :destroy
   has_many :likes, dependent: :destroy
   # ユーザーが削除されたら、いいねも削除される
@@ -25,5 +25,7 @@ class User < ApplicationRecord
       return false
     end
   end
-  
+
+  # unless user.blank? ? inverse_follows.where(following_id: user.id).exists? : return false
+
 end
