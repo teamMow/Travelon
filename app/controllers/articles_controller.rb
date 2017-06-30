@@ -9,25 +9,21 @@ class ArticlesController < ApplicationController
 
   def create
   	@article = Article.new(article_params)
-  	# @article = Article.new(title: params[:title], content: params[:content])
-  	# @article = Article.new
-  	# @article.title = params[:title]
-  	# @article.content = params[:content]
   	# @article.user_id = current_user.id
 
   	if @article.save
     		redirect_to @article, notice: '投稿が成功しました'
-    		# redirect_to article_path(@article.id)
       else
       	render :new
       end
   end
 
   def index
-  	@articles = Article.page(params[:page]).per(6).includes(:user)
+  	@articles = Article.page(params[:page]).per(9).includes(:user).order(created_at: :desc)
   end
 
   def show
+    @user = current_user.id
   end
 
   def edit
@@ -35,12 +31,8 @@ class ArticlesController < ApplicationController
 
   def update
     	@article.update(article_params)
-    	# @article.title = params[:title]
-    	# @article.content = params[:content]
-    	# @article.area = params[:area]
     	if @article.save
     		redirect_to @article, notice: '投稿が更新されました'
-    		# redirect_to article_path(@article.id)
       else
       	render :edit
       end
@@ -59,7 +51,7 @@ class ArticlesController < ApplicationController
   	end
 
   	def article_params
-  		params.require(:article).permit(:title, :content, :area, :img, :user_id, :doya, :hobby)
+  		params.require(:article).permit(:title, :content, :area, :img, :user_id, :doya, :hobby, :user_id)
   	end
 
     def correct_user

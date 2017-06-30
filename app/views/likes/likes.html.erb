@@ -13,9 +13,9 @@
           <%= link_to likes_user_path(@user) do %>
             <div class="text">いいね一覧</div>
             <div class="num"><%= @user.likes.count %></div>
-          <% end %>     
+          <% end %>
         </li>
-    </ul> 
+    </ul>
     <% if @user.likes.empty? %>
         <div class="list-group-item">
           まだいいねされた投稿はありません。
@@ -30,7 +30,7 @@
         </h4>
         <div class="post-body">
             <%= article.body %>
-        </div>  
+        </div>
     <% end %>
 
 
